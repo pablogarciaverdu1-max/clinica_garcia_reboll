@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cuestionario IPSS - Clínica García Reboll</title>
+    <title>Evaluación IPSS - Clínica García Reboll Urología Valencia</title>
     <style>
         * {
             margin: 0;
@@ -15,11 +15,17 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             min-height: 100vh;
-            padding: 20px;
             color: #333;
         }
 
-        .container {
+        /* ==================== FORMULARIO IPSS ==================== */
+        .ipss-section {
+            display: block;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .ipss-container {
             max-width: 900px;
             margin: 0 auto;
             background: white;
@@ -28,7 +34,7 @@
             overflow: hidden;
         }
 
-        .header {
+        .ipss-header {
             background: linear-gradient(135deg, #1a5f7a 0%, #2a8fa8 100%);
             color: white;
             padding: 40px 30px;
@@ -36,14 +42,14 @@
             border-bottom: 5px solid #0d3d4d;
         }
 
-        .header h1 {
+        .ipss-header h1 {
             font-size: 32px;
             margin-bottom: 10px;
             font-weight: 300;
             letter-spacing: 0.5px;
         }
 
-        .header p {
+        .ipss-header p {
             font-size: 14px;
             opacity: 0.95;
             font-weight: 300;
@@ -57,8 +63,31 @@
             letter-spacing: 1px;
         }
 
-        .content {
+        .ipss-content {
             padding: 40px 30px;
+        }
+
+        .progress-indicator {
+            margin-bottom: 25px;
+            text-align: center;
+            font-size: 13px;
+            color: #666;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: #e8e8e8;
+            border-radius: 3px;
+            overflow: hidden;
+            margin-top: 8px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #2a8fa8, #3da8c4);
+            width: 0%;
+            transition: width 0.3s ease;
         }
 
         .info-box {
@@ -145,10 +174,6 @@
             background: #f5f9fc;
         }
 
-        .radio-option input[type="radio"]:checked + .radio-label:hover {
-            background: #2a8fa8;
-        }
-
         .frequency-header {
             display: flex;
             margin-bottom: 15px;
@@ -166,10 +191,6 @@
             min-width: 70px;
         }
 
-        .quality-scale {
-            margin-bottom: 20px;
-        }
-
         .quality-header {
             display: flex;
             margin-bottom: 10px;
@@ -184,6 +205,31 @@
             text-align: center;
             padding: 5px;
             min-width: 65px;
+        }
+
+        .quality-section {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 2px solid #ddd;
+        }
+
+        .quality-section .question-text {
+            display: block;
+        }
+
+        .disclaimer {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 6px;
+            font-size: 12px;
+            color: #666;
+            margin-top: 25px;
+            line-height: 1.6;
+            border: 1px solid #e8e8e8;
+        }
+
+        .disclaimer strong {
+            color: #2a8fa8;
         }
 
         .buttons-group {
@@ -233,115 +279,7 @@
             border-color: #2a8fa8;
         }
 
-        .results-container {
-            display: none;
-            margin-top: 40px;
-            padding: 30px;
-            background: linear-gradient(135deg, #f5f7fa 0%, #f0f8fb 100%);
-            border-radius: 8px;
-            border-left: 5px solid #2a8fa8;
-        }
-
-        .results-container.show {
-            display: block;
-            animation: slideIn 0.4s ease;
-        }
-
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .score-box {
-            text-align: center;
-            margin-bottom: 25px;
-        }
-
-        .score-value {
-            font-size: 48px;
-            font-weight: bold;
-            color: #2a8fa8;
-            margin: 10px 0;
-        }
-
-        .score-max {
-            font-size: 16px;
-            color: #666;
-            font-weight: 500;
-        }
-
-        .score-label {
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .interpretation-box {
-            padding: 20px;
-            border-radius: 6px;
-            margin-top: 20px;
-        }
-
-        .interpretation-mild {
-            background: #e8f5e9;
-            border-left: 4px solid #66bb6a;
-            color: #2e7d32;
-        }
-
-        .interpretation-moderate {
-            background: #fff3e0;
-            border-left: 4px solid #ffa726;
-            color: #e65100;
-        }
-
-        .interpretation-severe {
-            background: #ffebee;
-            border-left: 4px solid #ef5350;
-            color: #c62828;
-        }
-
-        .interpretation-title {
-            font-weight: 600;
-            font-size: 14px;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .interpretation-text {
-            font-size: 13px;
-            line-height: 1.6;
-        }
-
-        .recommendation-box {
-            background: white;
-            padding: 15px;
-            border-radius: 6px;
-            margin-top: 15px;
-            border: 1px solid #e0e0e0;
-            font-size: 13px;
-            line-height: 1.6;
-            color: #555;
-        }
-
-        .recommendation-title {
-            font-weight: 600;
-            color: #2a8fa8;
-            margin-bottom: 8px;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .footer {
+        .ipss-footer {
             background: #f5f5f5;
             padding: 20px 30px;
             text-align: center;
@@ -350,18 +288,370 @@
             border-top: 1px solid #eee;
         }
 
-        .footer p {
-            margin: 5px 0;
-            line-height: 1.5;
+        /* ==================== RESULTADOS Y LANDING PAGE ==================== */
+        .results-section {
+            display: none;
+            min-height: 100vh;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
         }
 
+        .results-section.show {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .results-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .result-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .result-header {
+            background: linear-gradient(135deg, #1a5f7a 0%, #2a8fa8 100%);
+            color: white;
+            padding: 50px 30px;
+            text-align: center;
+        }
+
+        .result-header h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        .score-display {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 10px;
+            margin: 30px 0;
+        }
+
+        .score-number {
+            font-size: 72px;
+            font-weight: bold;
+            line-height: 1;
+        }
+
+        .score-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding-top: 10px;
+        }
+
+        .score-of {
+            font-size: 20px;
+            opacity: 0.9;
+        }
+
+        .score-label {
+            font-size: 14px;
+            opacity: 0.8;
+            margin-top: 5px;
+        }
+
+        .result-body {
+            padding: 50px 40px;
+        }
+
+        .interpretation-section {
+            margin-bottom: 40px;
+        }
+
+        .interpretation-box {
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border-left: 6px solid;
+        }
+
+        .interpretation-mild {
+            background: #e8f5e9;
+            border-left-color: #66bb6a;
+            color: #2e7d32;
+        }
+
+        .interpretation-moderate {
+            background: #fff3e0;
+            border-left-color: #ffa726;
+            color: #e65100;
+        }
+
+        .interpretation-severe {
+            background: #ffebee;
+            border-left-color: #ef5350;
+            color: #c62828;
+        }
+
+        .interpretation-title {
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .interpretation-text {
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .recommendation-section {
+            background: #f0f8fb;
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 6px solid #2a8fa8;
+            margin-bottom: 30px;
+        }
+
+        .recommendation-title {
+            font-weight: 700;
+            color: #1a5f7a;
+            margin-bottom: 15px;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .recommendation-text {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #1a5f7a 0%, #2a8fa8 100%);
+            color: white;
+            padding: 50px 40px;
+            text-align: center;
+            border-radius: 12px;
+            margin: 40px 0;
+        }
+
+        .cta-title {
+            font-size: 28px;
+            margin-bottom: 15px;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        .cta-text {
+            font-size: 16px;
+            margin-bottom: 30px;
+            line-height: 1.8;
+            opacity: 0.95;
+        }
+
+        .btn-large {
+            padding: 18px 50px;
+            font-size: 16px;
+            background: white;
+            color: #2a8fa8;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+        }
+
+        .btn-large:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* ==================== FORMULARIO DE CONTACTO ==================== */
+        .contact-section {
+            background: white;
+            padding: 50px 40px;
+            border-radius: 12px;
+            margin-top: 30px;
+        }
+
+        .contact-title {
+            font-size: 28px;
+            color: #1a5f7a;
+            margin-bottom: 10px;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-subtitle {
+            font-size: 15px;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #2a8fa8;
+            box-shadow: 0 0 0 3px rgba(42, 143, 168, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .btn-submit {
+            background: linear-gradient(135deg, #1a5f7a 0%, #2a8fa8 100%);
+            color: white;
+            padding: 15px 50px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(42, 143, 168, 0.4);
+        }
+
+        .btn-back {
+            background: #f0f0f0;
+            color: #333;
+            padding: 15px 50px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-back:hover {
+            border-color: #2a8fa8;
+            background: #e8e8e8;
+        }
+
+        /* ==================== INFO CLINICA ==================== */
+        .clinic-info {
+            background: #f0f8fb;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 30px 0;
+            border-left: 6px solid #2a8fa8;
+        }
+
+        .clinic-info h3 {
+            color: #1a5f7a;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .clinic-info p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .clinic-contact {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+
+        .contact-item {
+            margin: 10px 0;
+            font-size: 14px;
+        }
+
+        .contact-item strong {
+            color: #2a8fa8;
+        }
+
+        /* ==================== RESPONSIVO ==================== */
         @media (max-width: 768px) {
-            .header h1 {
+            .ipss-header h1,
+            .result-header h2,
+            .contact-title,
+            .cta-title {
                 font-size: 24px;
             }
 
-            .content {
+            .ipss-content,
+            .result-body,
+            .contact-section {
                 padding: 25px 20px;
+            }
+
+            .score-number {
+                font-size: 56px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
             }
 
             .options-container {
@@ -377,311 +667,397 @@
                 font-size: 12px;
             }
 
-            .buttons-group {
+            .form-buttons {
                 flex-direction: column;
             }
 
-            .btn {
+            .btn-submit,
+            .btn-back {
                 width: 100%;
             }
 
-            .score-value {
-                font-size: 36px;
+            .cta-section {
+                padding: 30px 20px;
+            }
+
+            .interpretation-box,
+            .recommendation-section {
+                padding: 20px;
             }
         }
 
-        .quality-section {
-            margin-top: 30px;
-            padding-top: 30px;
-            border-top: 2px solid #ddd;
-        }
-
-        .quality-section .question-text {
-            display: block;
-        }
-
-        .hidden {
+        .success-message {
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #66bb6a;
             display: none;
         }
 
-        .progress-indicator {
-            margin-bottom: 25px;
-            text-align: center;
-            font-size: 13px;
-            color: #666;
+        .success-message.show {
+            display: block;
+            animation: slideIn 0.3s ease;
         }
 
-        .progress-bar {
-            width: 100%;
-            height: 6px;
-            background: #e8e8e8;
-            border-radius: 3px;
-            overflow: hidden;
-            margin-top: 8px;
-        }
-
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #2a8fa8, #3da8c4);
-            width: 0%;
-            transition: width 0.3s ease;
-        }
-
-        .disclaimer {
-            background: #f9f9f9;
-            padding: 15px;
-            border-radius: 6px;
-            font-size: 12px;
-            color: #666;
-            margin-top: 25px;
-            line-height: 1.6;
-            border: 1px solid #e8e8e8;
-        }
-
-        .disclaimer strong {
-            color: #2a8fa8;
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>Cuestionario IPSS</h1>
-            <p>Evaluación Internacional de Síntomas de Próstata</p>
-            <div class="clinic-name">Clínica García Reboll - Urología</div>
-        </div>
-
-        <div class="content">
-            <div class="progress-indicator">
-                Progreso: <span id="answered">0</span> de 8 preguntas respondidas
-                <div class="progress-bar">
-                    <div class="progress-fill" id="progressFill"></div>
-                </div>
+    <!-- SECCIÓN FORMULARIO IPSS -->
+    <div class="ipss-section" id="ipssSection">
+        <div class="ipss-container">
+            <div class="ipss-header">
+                <h1>Cuestionario IPSS</h1>
+                <p>Evaluación Internacional de Síntomas de Próstata</p>
+                <div class="clinic-name">Clínica García Reboll - Urología</div>
             </div>
 
-            <div class="info-box">
-                <strong>Instrucciones:</strong> Este cuestionario evalúa los síntomas relacionados con la próstata. Responda cada pregunta según su experiencia en los últimos 30 días. Sus respuestas son confidenciales y se procesan localmente en este navegador.
+            <div class="ipss-content">
+                <div class="progress-indicator">
+                    Progreso: <span id="answered">0</span> de 8 preguntas respondidas
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <strong>Instrucciones:</strong> Este cuestionario evalúa los síntomas relacionados con la próstata. Responda cada pregunta según su experiencia en los últimos 30 días. Sus respuestas son confidenciales y se procesan localmente en este navegador.
+                </div>
+
+                <form id="ipssForm">
+                    <!-- Preguntas 1-6: Síntomas urinarios -->
+                    <div class="question-group">
+                        <span class="question-number">1</span>
+                        <span class="question-text">Durante más o menos los últimos 30 días, ¿cuántas veces ha tenido la sensación de no vaciar completamente la vejiga al terminar de orinar?</span>
+                        <div class="frequency-header">
+                            <div class="frequency-label">Ninguna</div>
+                            <div class="frequency-label">1 vez</div>
+                            <div class="frequency-label">< mitad</div>
+                            <div class="frequency-label">≈ mitad</div>
+                            <div class="frequency-label">> mitad</div>
+                            <div class="frequency-label">Siempre</div>
+                        </div>
+                        <div class="options-container">
+                            <div class="radio-option"><input type="radio" name="q1" value="0" id="q1_0"><label for="q1_0" class="radio-label">0</label></div>
+                            <div class="radio-option"><input type="radio" name="q1" value="1" id="q1_1"><label for="q1_1" class="radio-label">1</label></div>
+                            <div class="radio-option"><input type="radio" name="q1" value="2" id="q1_2"><label for="q1_2" class="radio-label">2</label></div>
+                            <div class="radio-option"><input type="radio" name="q1" value="3" id="q1_3"><label for="q1_3" class="radio-label">3</label></div>
+                            <div class="radio-option"><input type="radio" name="q1" value="4" id="q1_4"><label for="q1_4" class="radio-label">4</label></div>
+                            <div class="radio-option"><input type="radio" name="q1" value="5" id="q1_5"><label for="q1_5" class="radio-label">5</label></div>
+                        </div>
+                    </div>
+
+                    <div class="question-group">
+                        <span class="question-number">2</span>
+                        <span class="question-text">Durante más o menos los últimos 30 días, ¿cuántas veces ha tenido que orinar en las 2 horas siguientes después de haber orinado?</span>
+                        <div class="frequency-header">
+                            <div class="frequency-label">Ninguna</div>
+                            <div class="frequency-label">1 vez</div>
+                            <div class="frequency-label">< mitad</div>
+                            <div class="frequency-label">≈ mitad</div>
+                            <div class="frequency-label">> mitad</div>
+                            <div class="frequency-label">Siempre</div>
+                        </div>
+                        <div class="options-container">
+                            <div class="radio-option"><input type="radio" name="q2" value="0" id="q2_0"><label for="q2_0" class="radio-label">0</label></div>
+                            <div class="radio-option"><input type="radio" name="q2" value="1" id="q2_1"><label for="q2_1" class="radio-label">1</label></div>
+                            <div class="radio-option"><input type="radio" name="q2" value="2" id="q2_2"><label for="q2_2" class="radio-label">2</label></div>
+                            <div class="radio-option"><input type="radio" name="q2" value="3" id="q2_3"><label for="q2_3" class="radio-label">3</label></div>
+                            <div class="radio-option"><input type="radio" name="q2" value="4" id="q2_4"><label for="q2_4" class="radio-label">4</label></div>
+                            <div class="radio-option"><input type="radio" name="q2" value="5" id="q2_5"><label for="q2_5" class="radio-label">5</label></div>
+                        </div>
+                    </div>
+
+                    <div class="question-group">
+                        <span class="question-number">3</span>
+                        <span class="question-text">Durante más o menos los últimos 30 días, ¿cuántas veces ha notado que, al orinar, paraba y comenzaba de nuevo varias veces?</span>
+                        <div class="frequency-header">
+                            <div class="frequency-label">Ninguna</div>
+                            <div class="frequency-label">1 vez</div>
+                            <div class="frequency-label">< mitad</div>
+                            <div class="frequency-label">≈ mitad</div>
+                            <div class="frequency-label">> mitad</div>
+                            <div class="frequency-label">Siempre</div>
+                        </div>
+                        <div class="options-container">
+                            <div class="radio-option"><input type="radio" name="q3" value="0" id="q3_0"><label for="q3_0" class="radio-label">0</label></div>
+                            <div class="radio-option"><input type="radio" name="q3" value="1" id="q3_1"><label for="q3_1" class="radio-label">1</label></div>
+                            <div class="radio-option"><input type="radio" name="q3" value="2" id="q3_2"><label for="q3_2" class="radio-label">2</label></div>
+                            <div class="radio-option"><input type="radio" name="q3" value="3" id="q3_3"><label for="q3_3" class="radio-label">3</label></div>
+                            <div class="radio-option"><input type="radio" name="q3" value="4" id="q3_4"><label for="q3_4" class="radio-label">4</label></div>
+                            <div class="radio-option"><input type="radio" name="q3" value="5" id="q3_5"><label for="q3_5" class="radio-label">5</label></div>
+                        </div>
+                    </div>
+
+                    <div class="question-group">
+                        <span class="question-number">4</span>
+                        <span class="question-text">Durante más o menos los últimos 30 días, ¿cuántas veces ha tenido dificultad para aguantar las ganas de orinar?</span>
+                        <div class="frequency-header">
+                            <div class="frequency-label">Ninguna</div>
+                            <div class="frequency-label">1 vez</div>
+                            <div class="frequency-label">< mitad</div>
+                            <div class="frequency-label">≈ mitad</div>
+                            <div class="frequency-label">> mitad</div>
+                            <div class="frequency-label">Siempre</div>
+                        </div>
+                        <div class="options-container">
+                            <div class="radio-option"><input type="radio" name="q4" value="0" id="q4_0"><label for="q4_0" class="radio-label">0</label></div>
+                            <div class="radio-option"><input type="radio" name="q4" value="1" id="q4_1"><label for="q4_1" class="radio-label">1</label></div>
+                            <div class="radio-option"><input type="radio" name="q4" value="2" id="q4_2"><label for="q4_2" class="radio-label">2</label></div>
+                            <div class="radio-option"><input type="radio" name="q4" value="3" id="q4_3"><label for="q4_3" class="radio-label">3</label></div>
+                            <div class="radio-option"><input type="radio" name="q4" value="4" id="q4_4"><label for="q4_4" class="radio-label">4</label></div>
+                            <div class="radio-option"><input type="radio" name="q4" value="5" id="q4_5"><label for="q4_5" class="radio-label">5</label></div>
+                        </div>
+                    </div>
+
+                    <div class="question-group">
+                        <span class="question-number">5</span>
+                        <span class="question-text">Durante más o menos los últimos 30 días, ¿cuántas veces ha observado que el chorro de orina es poco fuerte?</span>
+                        <div class="frequency-header">
+                            <div class="frequency-label">Ninguna</div>
+                            <div class="frequency-label">1 vez</div>
+                            <div class="frequency-label">< mitad</div>
+                            <div class="frequency-label">≈ mitad</div>
+                            <div class="frequency-label">> mitad</div>
+                            <div class="frequency-label">Siempre</div>
+                        </div>
+                        <div class="options-container">
+                            <div class="radio-option"><input type="radio" name="q5" value="0" id="q5_0"><label for="q5_0" class="radio-label">0</label></div>
+                            <div class="radio-option"><input type="radio" name="q5" value="1" id="q5_1"><label for="q5_1" class="radio-label">1</label></div>
+                            <div class="radio-option"><input type="radio" name="q5" value="2" id="q5_2"><label for="q5_2" class="radio-label">2</label></div>
+                            <div class="radio-option"><input type="radio" name="q5" value="3" id="q5_3"><label for="q5_3" class="radio-label">3</label></div>
+                            <div class="radio-option"><input type="radio" name="q5" value="4" id="q5_4"><label for="q5_4" class="radio-label">4</label></div>
+                            <div class="radio-option"><input type="radio" name="q5" value="5" id="q5_5"><label for="q5_5" class="radio-label">5</label></div>
+                        </div>
+                    </div>
+
+                    <div class="question-group">
+                        <span class="question-number">6</span>
+                        <span class="question-text">Durante más o menos los últimos 30 días, ¿cuántas veces ha tenido que apretar o hacer fuerza para comenzar a orinar?</span>
+                        <div class="frequency-header">
+                            <div class="frequency-label">Ninguna</div>
+                            <div class="frequency-label">1 vez</div>
+                            <div class="frequency-label">< mitad</div>
+                            <div class="frequency-label">≈ mitad</div>
+                            <div class="frequency-label">> mitad</div>
+                            <div class="frequency-label">Siempre</div>
+                        </div>
+                        <div class="options-container">
+                            <div class="radio-option"><input type="radio" name="q6" value="0" id="q6_0"><label for="q6_0" class="radio-label">0</label></div>
+                            <div class="radio-option"><input type="radio" name="q6" value="1" id="q6_1"><label for="q6_1" class="radio-label">1</label></div>
+                            <div class="radio-option"><input type="radio" name="q6" value="2" id="q6_2"><label for="q6_2" class="radio-label">2</label></div>
+                            <div class="radio-option"><input type="radio" name="q6" value="3" id="q6_3"><label for="q6_3" class="radio-label">3</label></div>
+                            <div class="radio-option"><input type="radio" name="q6" value="4" id="q6_4"><label for="q6_4" class="radio-label">4</label></div>
+                            <div class="radio-option"><input type="radio" name="q6" value="5" id="q6_5"><label for="q6_5" class="radio-label">5</label></div>
+                        </div>
+                    </div>
+
+                    <!-- Pregunta 7: Nocturia -->
+                    <div class="question-group quality-section">
+                        <span class="question-number">7</span>
+                        <span class="question-text">Durante más o menos los últimos 30 días, ¿cuántas veces suele tener que levantarse para orinar desde que se va a la cama por la noche hasta que se levanta por la mañana?</span>
+                        <div class="quality-header">
+                            <div class="quality-label-item">Ninguna</div>
+                            <div class="quality-label-item">1 vez</div>
+                            <div class="quality-label-item">2 veces</div>
+                            <div class="quality-label-item">3 veces</div>
+                            <div class="quality-label-item">4 veces</div>
+                            <div class="quality-label-item">5+ veces</div>
+                        </div>
+                        <div class="options-container">
+                            <div class="radio-option"><input type="radio" name="q7" value="0" id="q7_0"><label for="q7_0" class="radio-label">0</label></div>
+                            <div class="radio-option"><input type="radio" name="q7" value="1" id="q7_1"><label for="q7_1" class="radio-label">1</label></div>
+                            <div class="radio-option"><input type="radio" name="q7" value="2" id="q7_2"><label for="q7_2" class="radio-label">2</label></div>
+                            <div class="radio-option"><input type="radio" name="q7" value="3" id="q7_3"><label for="q7_3" class="radio-label">3</label></div>
+                            <div class="radio-option"><input type="radio" name="q7" value="4" id="q7_4"><label for="q7_4" class="radio-label">4</label></div>
+                            <div class="radio-option"><input type="radio" name="q7" value="5" id="q7_5"><label for="q7_5" class="radio-label">5</label></div>
+                        </div>
+                    </div>
+
+                    <!-- Pregunta 8: Calidad de vida -->
+                    <div class="question-group quality-section">
+                        <span class="question-number">8</span>
+                        <span class="question-text">¿Cómo se sentiría si tuviera que pasar el resto de la vida con los síntomas prostáticos tal y como los siente ahora?</span>
+                        <div class="quality-header">
+                            <div class="quality-label-item">Encantado</div>
+                            <div class="quality-label-item">Muy satisfecho</div>
+                            <div class="quality-label-item">Satisfecho</div>
+                            <div class="quality-label-item">Indiferente</div>
+                            <div class="quality-label-item">Insatisfecho</div>
+                            <div class="quality-label-item">Muy insatisfecho</div>
+                            <div class="quality-label-item">Fatal</div>
+                        </div>
+                        <div class="options-container">
+                            <div class="radio-option"><input type="radio" name="q8" value="0" id="q8_0"><label for="q8_0" class="radio-label">0</label></div>
+                            <div class="radio-option"><input type="radio" name="q8" value="1" id="q8_1"><label for="q8_1" class="radio-label">1</label></div>
+                            <div class="radio-option"><input type="radio" name="q8" value="2" id="q8_2"><label for="q8_2" class="radio-label">2</label></div>
+                            <div class="radio-option"><input type="radio" name="q8" value="3" id="q8_3"><label for="q8_3" class="radio-label">3</label></div>
+                            <div class="radio-option"><input type="radio" name="q8" value="4" id="q8_4"><label for="q8_4" class="radio-label">4</label></div>
+                            <div class="radio-option"><input type="radio" name="q8" value="5" id="q8_5"><label for="q8_5" class="radio-label">5</label></div>
+                            <div class="radio-option"><input type="radio" name="q8" value="6" id="q8_6"><label for="q8_6" class="radio-label">6</label></div>
+                        </div>
+                    </div>
+
+                    <div class="disclaimer">
+                        <strong>Nota importante:</strong> Este cuestionario es una herramienta de autodetección. Los resultados no son diagnósticos. Consulte con un especialista en urología para una evaluación médica completa. Los datos se procesan localmente en su navegador y no se almacenan.
+                    </div>
+
+                    <div class="buttons-group">
+                        <button type="button" class="btn btn-secondary" onclick="resetForm()">Limpiar</button>
+                        <button type="button" class="btn btn-primary" id="calculateBtn" onclick="calculateScore()" disabled>Ver Resultados</button>
+                    </div>
+                </form>
             </div>
 
-            <form id="ipssForm">
-                <!-- Preguntas 1-6: Síntomas urinarios -->
-                <div class="question-group">
-                    <span class="question-number">1</span>
-                    <span class="question-text">Durante más o menos los últimos 30 días, ¿cuántas veces ha tenido la sensación de no vaciar completamente la vejiga al terminar de orinar?</span>
-                    <div class="frequency-header">
-                        <div class="frequency-label">Ninguna</div>
-                        <div class="frequency-label">1 vez</div>
-                        <div class="frequency-label">< mitad</div>
-                        <div class="frequency-label">≈ mitad</div>
-                        <div class="frequency-label">> mitad</div>
-                        <div class="frequency-label">Siempre</div>
-                    </div>
-                    <div class="options-container">
-                        <div class="radio-option"><input type="radio" name="q1" value="0" id="q1_0"><label for="q1_0" class="radio-label">0</label></div>
-                        <div class="radio-option"><input type="radio" name="q1" value="1" id="q1_1"><label for="q1_1" class="radio-label">1</label></div>
-                        <div class="radio-option"><input type="radio" name="q1" value="2" id="q1_2"><label for="q1_2" class="radio-label">2</label></div>
-                        <div class="radio-option"><input type="radio" name="q1" value="3" id="q1_3"><label for="q1_3" class="radio-label">3</label></div>
-                        <div class="radio-option"><input type="radio" name="q1" value="4" id="q1_4"><label for="q1_4" class="radio-label">4</label></div>
-                        <div class="radio-option"><input type="radio" name="q1" value="5" id="q1_5"><label for="q1_5" class="radio-label">5</label></div>
-                    </div>
-                </div>
-
-                <div class="question-group">
-                    <span class="question-number">2</span>
-                    <span class="question-text">Durante más o menos los últimos 30 días, ¿cuántas veces ha tenido que orinar en las 2 horas siguientes después de haber orinado?</span>
-                    <div class="frequency-header">
-                        <div class="frequency-label">Ninguna</div>
-                        <div class="frequency-label">1 vez</div>
-                        <div class="frequency-label">< mitad</div>
-                        <div class="frequency-label">≈ mitad</div>
-                        <div class="frequency-label">> mitad</div>
-                        <div class="frequency-label">Siempre</div>
-                    </div>
-                    <div class="options-container">
-                        <div class="radio-option"><input type="radio" name="q2" value="0" id="q2_0"><label for="q2_0" class="radio-label">0</label></div>
-                        <div class="radio-option"><input type="radio" name="q2" value="1" id="q2_1"><label for="q2_1" class="radio-label">1</label></div>
-                        <div class="radio-option"><input type="radio" name="q2" value="2" id="q2_2"><label for="q2_2" class="radio-label">2</label></div>
-                        <div class="radio-option"><input type="radio" name="q2" value="3" id="q2_3"><label for="q2_3" class="radio-label">3</label></div>
-                        <div class="radio-option"><input type="radio" name="q2" value="4" id="q2_4"><label for="q2_4" class="radio-label">4</label></div>
-                        <div class="radio-option"><input type="radio" name="q2" value="5" id="q2_5"><label for="q2_5" class="radio-label">5</label></div>
-                    </div>
-                </div>
-
-                <div class="question-group">
-                    <span class="question-number">3</span>
-                    <span class="question-text">Durante más o menos los últimos 30 días, ¿cuántas veces ha notado que, al orinar, paraba y comenzaba de nuevo varias veces?</span>
-                    <div class="frequency-header">
-                        <div class="frequency-label">Ninguna</div>
-                        <div class="frequency-label">1 vez</div>
-                        <div class="frequency-label">< mitad</div>
-                        <div class="frequency-label">≈ mitad</div>
-                        <div class="frequency-label">> mitad</div>
-                        <div class="frequency-label">Siempre</div>
-                    </div>
-                    <div class="options-container">
-                        <div class="radio-option"><input type="radio" name="q3" value="0" id="q3_0"><label for="q3_0" class="radio-label">0</label></div>
-                        <div class="radio-option"><input type="radio" name="q3" value="1" id="q3_1"><label for="q3_1" class="radio-label">1</label></div>
-                        <div class="radio-option"><input type="radio" name="q3" value="2" id="q3_2"><label for="q3_2" class="radio-label">2</label></div>
-                        <div class="radio-option"><input type="radio" name="q3" value="3" id="q3_3"><label for="q3_3" class="radio-label">3</label></div>
-                        <div class="radio-option"><input type="radio" name="q3" value="4" id="q3_4"><label for="q3_4" class="radio-label">4</label></div>
-                        <div class="radio-option"><input type="radio" name="q3" value="5" id="q3_5"><label for="q3_5" class="radio-label">5</label></div>
-                    </div>
-                </div>
-
-                <div class="question-group">
-                    <span class="question-number">4</span>
-                    <span class="question-text">Durante más o menos los últimos 30 días, ¿cuántas veces ha tenido dificultad para aguantar las ganas de orinar?</span>
-                    <div class="frequency-header">
-                        <div class="frequency-label">Ninguna</div>
-                        <div class="frequency-label">1 vez</div>
-                        <div class="frequency-label">< mitad</div>
-                        <div class="frequency-label">≈ mitad</div>
-                        <div class="frequency-label">> mitad</div>
-                        <div class="frequency-label">Siempre</div>
-                    </div>
-                    <div class="options-container">
-                        <div class="radio-option"><input type="radio" name="q4" value="0" id="q4_0"><label for="q4_0" class="radio-label">0</label></div>
-                        <div class="radio-option"><input type="radio" name="q4" value="1" id="q4_1"><label for="q4_1" class="radio-label">1</label></div>
-                        <div class="radio-option"><input type="radio" name="q4" value="2" id="q4_2"><label for="q4_2" class="radio-label">2</label></div>
-                        <div class="radio-option"><input type="radio" name="q4" value="3" id="q4_3"><label for="q4_3" class="radio-label">3</label></div>
-                        <div class="radio-option"><input type="radio" name="q4" value="4" id="q4_4"><label for="q4_4" class="radio-label">4</label></div>
-                        <div class="radio-option"><input type="radio" name="q4" value="5" id="q4_5"><label for="q4_5" class="radio-label">5</label></div>
-                    </div>
-                </div>
-
-                <div class="question-group">
-                    <span class="question-number">5</span>
-                    <span class="question-text">Durante más o menos los últimos 30 días, ¿cuántas veces ha observado que el chorro de orina es poco fuerte?</span>
-                    <div class="frequency-header">
-                        <div class="frequency-label">Ninguna</div>
-                        <div class="frequency-label">1 vez</div>
-                        <div class="frequency-label">< mitad</div>
-                        <div class="frequency-label">≈ mitad</div>
-                        <div class="frequency-label">> mitad</div>
-                        <div class="frequency-label">Siempre</div>
-                    </div>
-                    <div class="options-container">
-                        <div class="radio-option"><input type="radio" name="q5" value="0" id="q5_0"><label for="q5_0" class="radio-label">0</label></div>
-                        <div class="radio-option"><input type="radio" name="q5" value="1" id="q5_1"><label for="q5_1" class="radio-label">1</label></div>
-                        <div class="radio-option"><input type="radio" name="q5" value="2" id="q5_2"><label for="q5_2" class="radio-label">2</label></div>
-                        <div class="radio-option"><input type="radio" name="q5" value="3" id="q5_3"><label for="q5_3" class="radio-label">3</label></div>
-                        <div class="radio-option"><input type="radio" name="q5" value="4" id="q5_4"><label for="q5_4" class="radio-label">4</label></div>
-                        <div class="radio-option"><input type="radio" name="q5" value="5" id="q5_5"><label for="q5_5" class="radio-label">5</label></div>
-                    </div>
-                </div>
-
-                <div class="question-group">
-                    <span class="question-number">6</span>
-                    <span class="question-text">Durante más o menos los últimos 30 días, ¿cuántas veces ha tenido que apretar o hacer fuerza para comenzar a orinar?</span>
-                    <div class="frequency-header">
-                        <div class="frequency-label">Ninguna</div>
-                        <div class="frequency-label">1 vez</div>
-                        <div class="frequency-label">< mitad</div>
-                        <div class="frequency-label">≈ mitad</div>
-                        <div class="frequency-label">> mitad</div>
-                        <div class="frequency-label">Siempre</div>
-                    </div>
-                    <div class="options-container">
-                        <div class="radio-option"><input type="radio" name="q6" value="0" id="q6_0"><label for="q6_0" class="radio-label">0</label></div>
-                        <div class="radio-option"><input type="radio" name="q6" value="1" id="q6_1"><label for="q6_1" class="radio-label">1</label></div>
-                        <div class="radio-option"><input type="radio" name="q6" value="2" id="q6_2"><label for="q6_2" class="radio-label">2</label></div>
-                        <div class="radio-option"><input type="radio" name="q6" value="3" id="q6_3"><label for="q6_3" class="radio-label">3</label></div>
-                        <div class="radio-option"><input type="radio" name="q6" value="4" id="q6_4"><label for="q6_4" class="radio-label">4</label></div>
-                        <div class="radio-option"><input type="radio" name="q6" value="5" id="q6_5"><label for="q6_5" class="radio-label">5</label></div>
-                    </div>
-                </div>
-
-                <!-- Pregunta 7: Nocturia -->
-                <div class="question-group quality-section">
-                    <span class="question-number">7</span>
-                    <span class="question-text">Durante más o menos los últimos 30 días, ¿cuántas veces suele tener que levantarse para orinar desde que se va a la cama por la noche hasta que se levanta por la mañana?</span>
-                    <div class="quality-header">
-                        <div class="quality-label-item">Ninguna</div>
-                        <div class="quality-label-item">1 vez</div>
-                        <div class="quality-label-item">2 veces</div>
-                        <div class="quality-label-item">3 veces</div>
-                        <div class="quality-label-item">4 veces</div>
-                        <div class="quality-label-item">5+ veces</div>
-                    </div>
-                    <div class="options-container">
-                        <div class="radio-option"><input type="radio" name="q7" value="0" id="q7_0"><label for="q7_0" class="radio-label">0</label></div>
-                        <div class="radio-option"><input type="radio" name="q7" value="1" id="q7_1"><label for="q7_1" class="radio-label">1</label></div>
-                        <div class="radio-option"><input type="radio" name="q7" value="2" id="q7_2"><label for="q7_2" class="radio-label">2</label></div>
-                        <div class="radio-option"><input type="radio" name="q7" value="3" id="q7_3"><label for="q7_3" class="radio-label">3</label></div>
-                        <div class="radio-option"><input type="radio" name="q7" value="4" id="q7_4"><label for="q7_4" class="radio-label">4</label></div>
-                        <div class="radio-option"><input type="radio" name="q7" value="5" id="q7_5"><label for="q7_5" class="radio-label">5</label></div>
-                    </div>
-                </div>
-
-                <!-- Pregunta 8: Calidad de vida -->
-                <div class="question-group quality-section">
-                    <span class="question-number">8</span>
-                    <span class="question-text">¿Cómo se sentiría si tuviera que pasar el resto de la vida con los síntomas prostáticos tal y como los siente ahora?</span>
-                    <div class="quality-header">
-                        <div class="quality-label-item">Encantado</div>
-                        <div class="quality-label-item">Muy satisfecho</div>
-                        <div class="quality-label-item">Satisfecho</div>
-                        <div class="quality-label-item">Indiferente</div>
-                        <div class="quality-label-item">Insatisfecho</div>
-                        <div class="quality-label-item">Muy insatisfecho</div>
-                        <div class="quality-label-item">Fatal</div>
-                    </div>
-                    <div class="options-container">
-                        <div class="radio-option"><input type="radio" name="q8" value="0" id="q8_0"><label for="q8_0" class="radio-label">0</label></div>
-                        <div class="radio-option"><input type="radio" name="q8" value="1" id="q8_1"><label for="q8_1" class="radio-label">1</label></div>
-                        <div class="radio-option"><input type="radio" name="q8" value="2" id="q8_2"><label for="q8_2" class="radio-label">2</label></div>
-                        <div class="radio-option"><input type="radio" name="q8" value="3" id="q8_3"><label for="q8_3" class="radio-label">3</label></div>
-                        <div class="radio-option"><input type="radio" name="q8" value="4" id="q8_4"><label for="q8_4" class="radio-label">4</label></div>
-                        <div class="radio-option"><input type="radio" name="q8" value="5" id="q8_5"><label for="q8_5" class="radio-label">5</label></div>
-                        <div class="radio-option"><input type="radio" name="q8" value="6" id="q8_6"><label for="q8_6" class="radio-label">6</label></div>
-                    </div>
-                </div>
-
-                <div class="disclaimer">
-                    <strong>Nota importante:</strong> Este cuestionario es una herramienta de autodetección. Los resultados no son diagnósticos. Consulte con un especialista en urología para una evaluación médica completa. Los datos se procesan localmente en su navegador y no se almacenan.
-                </div>
-
-                <div class="buttons-group">
-                    <button type="button" class="btn btn-secondary" onclick="resetForm()">Limpiar</button>
-                    <button type="button" class="btn btn-primary" id="calculateBtn" onclick="calculateScore()" disabled>Calcular Puntuación</button>
-                </div>
-            </form>
-
-            <div class="results-container" id="resultsContainer">
-                <div class="score-box">
-                    <div class="score-label">Puntuación IPSS Total</div>
-                    <div class="score-value" id="totalScore">0</div>
-                    <div class="score-max">de 35 puntos</div>
-                </div>
-
-                <div class="interpretation-box" id="interpretationBox">
-                    <!-- Se rellena dinámicamente -->
-                </div>
-
-                <div class="recommendation-box">
-                    <div class="recommendation-title">Recomendación</div>
-                    <div id="recommendationText"></div>
-                </div>
-
-                <div class="buttons-group">
-                    <button type="button" class="btn btn-secondary" onclick="printResults()">Imprimir</button>
-                    <button type="button" class="btn btn-secondary" onclick="resetForm()">Nueva Evaluación</button>
-                </div>
+            <div class="ipss-footer">
+                <p><strong>Clínica García Reboll</strong></p>
+                <p>Especialistas en Urología - Valencia</p>
+                <p>Evaluación segura y confidencial</p>
             </div>
         </div>
+    </div>
 
-        <div class="footer">
-            <p><strong>Clínica García Reboll</strong></p>
-            <p>Especialistas en Urología - Valencia</p>
-            <p>Esta herramienta de evaluación utiliza el cuestionario IPSS (International Prostate Symptom Score) reconocido internacionalmente.</p>
-            <p style="margin-top: 15px; font-size: 11px; opacity: 0.7;">© 2026 Clínica García Reboll. Todos los derechos reservados.</p>
+    <!-- SECCIÓN DE RESULTADOS Y LANDING PAGE -->
+    <div class="results-section" id="resultsSection">
+        <div class="results-container">
+            <!-- Card de Resultados -->
+            <div class="result-card">
+                <div class="result-header">
+                    <h2>Tu Resultado IPSS</h2>
+                    <div class="score-display">
+                        <div class="score-number" id="totalScore">0</div>
+                        <div class="score-text">
+                            <div class="score-of">de</div>
+                            <div class="score-label">35 puntos</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="result-body">
+                    <!-- Interpretación -->
+                    <div class="interpretation-section">
+                        <div class="interpretation-box" id="interpretationBox">
+                            <!-- Se rellena dinámicamente -->
+                        </div>
+
+                        <div class="recommendation-section">
+                            <div class="recommendation-title">📋 Recomendación</div>
+                            <div class="recommendation-text" id="recommendationText"></div>
+                        </div>
+                    </div>
+
+                    <!-- Info Clínica -->
+                    <div class="clinic-info">
+                        <h3>🏥 ¿Por qué es importante una evaluación profesional?</h3>
+                        <p>Tu resultado es una herramienta de orientación. Un especialista en urología podrá:</p>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Realizar una evaluación completa y personalizada</li>
+                            <li>Descartar otras condiciones médicas</li>
+                            <li>Proporcionar tratamiento específico si es necesario</li>
+                            <li>Hacer seguimiento de tu evolución en el tiempo</li>
+                        </ul>
+                    </div>
+
+                    <!-- CTA Principal -->
+                    <div class="cta-section">
+                        <h3 class="cta-title">¿Próximo paso?</h3>
+                        <p class="cta-text">Completa el formulario a continuación para agendar una consulta con nuestros especialistas. Estamos aquí para ayudarte.</p>
+                        <button class="btn-large" onclick="scrollToForm()">Agendar Cita Ahora</button>
+                    </div>
+
+                    <!-- Formulario de Contacto -->
+                    <div class="contact-section">
+                        <h3 class="contact-title">Agendar Consulta Médica</h3>
+                        <p class="contact-subtitle">Completa el formulario y nos pondremos en contacto para confirmar tu cita</p>
+
+                        <div class="success-message" id="successMessage">
+                            ✓ ¡Gracias! Tu solicitud ha sido enviada. Nos contactaremos pronto para confirmar tu cita.
+                        </div>
+
+                        <form id="contactForm" onsubmit="handleContactSubmit(event)">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="nombre">Nombre Completo *</label>
+                                    <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email *</label>
+                                    <input type="email" id="email" name="email" required placeholder="tu@email.com">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="telefono">Teléfono *</label>
+                                    <input type="tel" id="telefono" name="telefono" required placeholder="+34 600 000 000">
+                                </div>
+                                <div class="form-group">
+                                    <label for="edad">Edad</label>
+                                    <input type="number" id="edad" name="edad" placeholder="Tu edad">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="preferencia">Preferencia de Horario *</label>
+                                <select id="preferencia" name="preferencia" required>
+                                    <option value="">Selecciona un horario</option>
+                                    <option value="manana">Mañana (9:00 - 13:00)</option>
+                                    <option value="tarde">Tarde (16:00 - 20:00)</option>
+                                    <option value="flexible">Sin preferencia</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="consultas">¿Tienes consultas o comentarios?</label>
+                                <textarea id="consultas" name="consultas" placeholder="Cuéntanos si tienes alguna pregunta o comentario..."></textarea>
+                            </div>
+
+                            <div class="form-buttons">
+                                <button type="submit" class="btn-submit">Agendar Cita</button>
+                                <button type="button" class="btn-back" onclick="backToForm()">Volver al Cuestionario</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Contacto Directo -->
+                    <div class="clinic-info" style="margin-top: 40px;">
+                        <h3>Contacto Directo</h3>
+                        <div class="clinic-contact">
+                            <div class="contact-item">
+                                <strong>📞 Teléfono:</strong> +34 638 896 575
+                            </div>
+                            <div class="contact-item">
+                                <strong>📧 Email:</strong> info@clinicagarciareboll.com
+                            </div>
+                            <div class="contact-item">
+                                <strong>📍 Ubicación:</strong> Valencia, España
+                            </div>
+                            <div class="contact-item">
+                                <strong>🕐 Horario:</strong> Lunes a Viernes 9:00 - 20:00
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
     <script>
         const form = document.getElementById('ipssForm');
         const calculateBtn = document.getElementById('calculateBtn');
-        const resultsContainer = document.getElementById('resultsContainer');
+        const ipssSection = document.getElementById('ipssSection');
+        const resultsSection = document.getElementById('resultsSection');
         const progressFill = document.getElementById('progressFill');
         const answeredCount = document.getElementById('answered');
 
@@ -705,21 +1081,15 @@
             let ipsScore = 0;
             let qualityScore = 0;
 
-            // Preguntas 1-6 (Síntomas IPSS)
-            for (let i = 1; i <= 6; i++) {
+            // Preguntas 1-7 (Síntomas IPSS)
+            for (let i = 1; i <= 7; i++) {
                 const selected = form.querySelector(`input[name="q${i}"]:checked`);
                 if (selected) {
                     ipsScore += parseInt(selected.value);
                 }
             }
 
-            // Pregunta 7 (Nocturia)
-            const q7Selected = form.querySelector('input[name="q7"]:checked');
-            if (q7Selected) {
-                ipsScore += parseInt(q7Selected.value);
-            }
-
-            // Pregunta 8 (Calidad de vida)
+            // Pregunta 8 (Calidad de vida - no cuenta para IPSS)
             const q8Selected = form.querySelector('input[name="q8"]:checked');
             if (q8Selected) {
                 qualityScore = parseInt(q8Selected.value);
@@ -728,8 +1098,11 @@
             // Mostrar resultados
             document.getElementById('totalScore').textContent = ipsScore;
             showInterpretation(ipsScore, qualityScore);
-            resultsContainer.classList.add('show');
-            resultsContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+            // Transición a resultados
+            ipssSection.style.display = 'none';
+            resultsSection.classList.add('show');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function showInterpretation(score, qualityScore) {
@@ -742,46 +1115,82 @@
             if (score <= 7) {
                 className = 'interpretation-mild';
                 interpretation = '<div class="interpretation-title">✓ Síntomas Leves</div>' +
-                    '<div class="interpretation-text">Usted presenta síntomas leves del tracto urinario inferior. La mayoría de las personas con esta puntuación no requieren tratamiento inmediato.</div>';
-                recommendation = 'Se recomienda mantener un seguimiento regular y adoptar medidas de autocuidado como: vigilancia de la ingesta de líquidos por la tarde-noche, reducción de alcohol y cafeína, ejercicio regular, y revisar periódicamente con su médico.';
+                    '<div class="interpretation-text">Felicidades, tus síntomas urinarios son leves. Esto significa que el impacto en tu calidad de vida es mínimo. Sin embargo, es recomendable un seguimiento periódico.</div>';
+                recommendation = '✓ Mantén un estilo de vida saludable<br>✓ Reduce la ingesta de líquidos por la tarde-noche<br>✓ Limita el alcohol y la cafeína<br>✓ Realiza actividad física regular<br>✓ Revisión médica anual recomendada';
             } else if (score <= 19) {
                 className = 'interpretation-moderate';
                 interpretation = '<div class="interpretation-title">⚠ Síntomas Moderados</div>' +
-                    '<div class="interpretation-text">Usted presenta síntomas moderados del tracto urinario inferior. Se recomienda consultar con su médico especialista en urología para evaluar opciones de tratamiento.</div>';
-                recommendation = 'Considere consultar con su urólogo para discutir opciones de tratamiento farmacológico o cambios en el estilo de vida. El tratamiento puede mejorar significativamente su calidad de vida.';
+                    '<div class="interpretation-text">Presentas síntomas moderados que pueden estar afectando tu calidad de vida. Se recomienda consultar con un especialista en urología para evaluar opciones de tratamiento.</div>';
+                recommendation = '⚠ Se recomienda consulta con especialista<br>✓ Evaluación completa del estado urinario<br>✓ Posibles opciones farmacológicas<br>✓ Cambios en estilo de vida<br>✓ Seguimiento cada 3-6 meses';
             } else {
                 className = 'interpretation-severe';
-                interpretation = '<div class="interpretation-title">⚠ Síntomas Importantes</div>' +
-                    '<div class="interpretation-text">Usted presenta síntomas significativos del tracto urinario inferior que afectan su calidad de vida. Es importante ser evaluado por un especialista en urología para descartar complicaciones e iniciar tratamiento.</div>';
-                recommendation = 'Se recomienda <strong>consultar urgentemente con un especialista en urología</strong> para una evaluación completa, diagnóstico diferencial y discusión de opciones terapéuticas que pueden incluir medicamentos o procedimientos especializados.';
+                interpretation = '<div class="interpretation-title">🚨 Síntomas Importantes</div>' +
+                    '<div class="interpretation-text">Tus síntomas son significativos y probablemente están afectando tu calidad de vida. Es importante ser evaluado por un especialista en urología para descartar complicaciones e iniciar tratamiento.</div>';
+                recommendation = '🚨 Consulta urgente con especialista recomendada<br>✓ Evaluación diagnóstica completa<br>✓ Análisis de orina y pruebas complementarias<br>✓ Opciones terapéuticas especializadas<br>✓ Seguimiento cercano post-tratamiento';
             }
 
             interpretationBox.className = 'interpretation-box ' + className;
             interpretationBox.innerHTML = interpretation;
             recommendationText.innerHTML = recommendation;
 
-            // Agregar información sobre calidad de vida
-            if (qualityScore > 3) {
+            // Agregar advertencia si calidad de vida es baja
+            if (qualityScore >= 4) {
                 const qualityWarning = document.createElement('div');
-                qualityWarning.style.marginTop = '15px';
-                qualityWarning.style.padding = '12px';
-                qualityWarning.style.backgroundColor = '#fff0f5';
+                qualityWarning.style.background = '#fff0f5';
+                qualityWarning.style.padding = '15px';
                 qualityWarning.style.border = '1px solid #ffc0d9';
-                qualityWarning.style.borderRadius = '4px';
-                qualityWarning.innerHTML = '<strong style="color: #c2185b;">Nota sobre calidad de vida:</strong> Sus síntomas están afectando significativamente su calidad de vida. Una consulta con un especialista es especialmente importante en su caso.';
-                recommendationText.parentElement.appendChild(qualityWarning);
+                qualityWarning.style.borderRadius = '6px';
+                qualityWarning.style.marginTop = '15px';
+                qualityWarning.innerHTML = '<strong style="color: #c2185b;">⚠ Nota Importante:</strong> Tus síntomas están impactando tu calidad de vida. Una consulta con un especialista es especialmente recomendada para mejorar tu bienestar.';
+                recommendationText.parentElement.parentElement.appendChild(qualityWarning);
             }
         }
 
-        function resetForm() {
-            form.reset();
-            resultsContainer.classList.remove('show');
-            updateProgress();
+        function scrollToForm() {
+            const contactSection = document.querySelector('.contact-section');
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function backToForm() {
+            ipssSection.style.display = 'block';
+            resultsSection.classList.remove('show');
+            document.getElementById('contactForm').reset();
+            document.getElementById('successMessage').classList.remove('show');
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        function printResults() {
-            window.print();
+        function handleContactSubmit(event) {
+            event.preventDefault();
+
+            const nombre = document.getElementById('nombre').value;
+            const email = document.getElementById('email').value;
+            const telefono = document.getElementById('telefono').value;
+            const edad = document.getElementById('edad').value;
+            const preferencia = document.getElementById('preferencia').value;
+            const consultas = document.getElementById('consultas').value;
+            const score = document.getElementById('totalScore').textContent;
+
+            // En una aplicación real, aquí enviarías los datos a un servidor
+            // Por ahora, solo mostramos un mensaje de éxito
+
+            console.log({
+                nombre,
+                email,
+                telefono,
+                edad,
+                preferencia,
+                consultas,
+                score
+            });
+
+            // Mostrar mensaje de éxito
+            document.getElementById('successMessage').classList.add('show');
+            document.getElementById('contactForm').reset();
+
+            // Ocultar el mensaje después de 5 segundos
+            setTimeout(() => {
+                document.getElementById('successMessage').classList.remove('show');
+            }, 5000);
         }
 
         // Inicializar
