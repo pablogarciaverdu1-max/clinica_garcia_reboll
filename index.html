@@ -2,52 +2,369 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>Evaluación IPSS - GARCIA REBOLL</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARGLASS Case Study - Pablo García Verdú | Experto HubSpot & Customer Journey</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <h1>Pablo García Verdú</h1>
+                <p class="subtitle">Experto en HubSpot & Customer Journey</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#inicio" class="active">Inicio</a></li>
+                <li><a href="#desafio">Desafío</a></li>
+                <li><a href="#solucion">Solución</a></li>
+                <li><a href="#journey">Customer Journey</a></li>
+                <li><a href="#resultados">Resultados</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
 
-        html {
-            font-size: 16px;
-        }
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>CARGLASS</h1>
+                <h2>Transformando el Customer Journey en la Industria de Reparación de Cristales</h2>
+                <p>Análisis estratégico de HubSpot y optimización de procesos de customer experience</p>
+                <button class="cta-button" onclick="document.getElementById('desafio').scrollIntoView({behavior: 'smooth'})">
+                    Ver caso práctico
+                </button>
+            </div>
+            <div class="hero-image">
+                <div class="hero-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
-            background: #f8f9fa;
-            color: #333;
-            line-height: 1.5;
-        }
+    <!-- Sección de Contexto -->
+    <section class="context-section">
+        <div class="container">
+            <div class="context-card">
+                <i class="fas fa-building"></i>
+                <h3>Sobre CARGLASS</h3>
+                <p>Líder europeo en reparación y sustitución de cristales para vehículos con presencia en múltiples países.</p>
+            </div>
+            <div class="context-card">
+                <i class="fas fa-target"></i>
+                <h3>Mi Rol</h3>
+                <p>Analista especializado en optimizar el customer journey mediante HubSpot y automatización de procesos.</p>
+            </div>
+            <div class="context-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Objetivo</h3>
+                <p>Mejorar la retención, satisfacción y rentabilidad del customer lifetime value.</p>
+            </div>
+        </div>
+    </section>
 
-        /* ==================== HEADER ==================== */
-        .header {
-            background: white;
-            border-bottom: 1px solid #e8e8e8;
-            padding: 15px;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+    <!-- Sección Desafío -->
+    <section id="desafio" class="desafio-section">
+        <div class="container">
+            <h2>El Desafío</h2>
+            <div class="desafio-grid">
+                <div class="desafio-item">
+                    <div class="icon-circle">1</div>
+                    <h3>Fragmentación del Customer Journey</h3>
+                    <p>Los datos estaban dispersos entre múltiples sistemas sin visión unificada del cliente.</p>
+                </div>
+                <div class="desafio-item">
+                    <div class="icon-circle">2</div>
+                    <h3>Procesos No Automatizados</h3>
+                    <p>Falta de automatización en follow-ups, aumentando costos operacionales y reduciendo conversiones.</p>
+                </div>
+                <div class="desafio-item">
+                    <div class="icon-circle">3</div>
+                    <h3>Baja Retención de Clientes</h3>
+                    <p>Sin estrategia de re-engagement, los clientes no retornaban tras primera compra.</p>
+                </div>
+                <div class="desafio-item">
+                    <div class="icon-circle">4</div>
+                    <h3>Métricas Deficientes</h3>
+                    <p>No existía tracking adecuado de KPIs clave ni análisis predictivo de comportamiento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        .logo-brand {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
+    <!-- Sección Solución -->
+    <section id="solucion" class="solucion-section">
+        <div class="container">
+            <h2>La Solución Implementada</h2>
 
-        .logo {
-            width: 45px;
-            height: 45px;
-            background: linear-gradient(135deg, #1a5f7a 0%, #2a8fa8 100%);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
+            <div class="soluciones-principales">
+                <div class="solucion-principal">
+                    <div class="solucion-header">
+                        <i class="fas fa-cogs"></i>
+                        <h3>1. Integración HubSpot</h3>
+                    </div>
+                    <ul class="solucion-lista">
+                        <li>Centralización de CRM con base de datos unificada</li>
+                        <li>Integración con sistema de citas online</li>
+                        <li>Sincronización automática de datos de clientes</li>
+                        <li>Seguimiento completo del ciclo de venta</li>
+                    </ul>
+                </div>
+
+                <div class="solucion-principal">
+                    <div class="solucion-header">
+                        <i class="fas fa-robot"></i>
+                        <h3>2. Automatización de Marketing</h3>
+                    </div>
+                    <ul class="solucion-lista">
+                        <li>Workflows automáticos de lead nurturing</li>
+                        <li>Email sequences personalizadas por segmento</li>
+                        <li>SMS y push notifications en momentos clave</li>
+                        <li>Escalado automático según comportamiento</li>
+                    </ul>
+                </div>
+
+                <div class="solucion-principal">
+                    <div class="solucion-header">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>3. Optimización del Journey</h3>
+                    </div>
+                    <ul class="solucion-lista">
+                        <li>Mapeo de touchpoints críticos del cliente</li>
+                        <li>Identificación de puntos de fricción</li>
+                        <li>Creación de workflows de re-engagement</li>
+                        <li>Personalización dinámica por comportamiento</li>
+                    </ul>
+                </div>
+
+                <div class="solucion-principal">
+                    <div class="solucion-header">
+                        <i class="fas fa-eye"></i>
+                        <h3>4. Dashboards y Analytics</h3>
+                    </div>
+                    <ul class="solucion-lista">
+                        <li>Dashboards en tiempo real con KPIs principales</li>
+                        <li>Reportes de conversión y ROI por canal</li>
+                        <li>Análisis predictivo de churn</li>
+                        <li>Segmentación avanzada de audiencias</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Customer Journey Interactiva -->
+    <section id="journey" class="journey-section">
+        <div class="container">
+            <h2>Customer Journey Interactivo</h2>
+            <p class="section-subtitle">Haz clic en cada etapa para ver los detalles de la estrategia implementada</p>
+
+            <div class="journey-container">
+                <div class="journey-stage" onclick="toggleJourneyDetails(this)">
+                    <div class="stage-number">1</div>
+                    <h3>Awareness</h3>
+                    <p>Descubrimiento</p>
+                    <div class="journey-icon"><i class="fas fa-eye"></i></div>
+                </div>
+
+                <div class="journey-arrow">→</div>
+
+                <div class="journey-stage" onclick="toggleJourneyDetails(this)">
+                    <div class="stage-number">2</div>
+                    <h3>Consideration</h3>
+                    <p>Evaluación</p>
+                    <div class="journey-icon"><i class="fas fa-search"></i></div>
+                </div>
+
+                <div class="journey-arrow">→</div>
+
+                <div class="journey-stage" onclick="toggleJourneyDetails(this)">
+                    <div class="stage-number">3</div>
+                    <h3>Decision</h3>
+                    <p>Conversión</p>
+                    <div class="journey-icon"><i class="fas fa-check"></i></div>
+                </div>
+
+                <div class="journey-arrow">→</div>
+
+                <div class="journey-stage" onclick="toggleJourneyDetails(this)">
+                    <div class="stage-number">4</div>
+                    <h3>Retention</h3>
+                    <p>Fidelización</p>
+                    <div class="journey-icon"><i class="fas fa-heart"></i></div>
+                </div>
+            </div>
+
+            <div id="journeyDetails" class="journey-details">
+                <!-- Detalles se cargan dinámicamente con JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Resultados -->
+    <section id="resultados" class="resultados-section">
+        <div class="container">
+            <h2>Resultados Conseguidos</h2>
+
+            <div class="resultados-grid">
+                <div class="resultado-card">
+                    <div class="resultado-number">+45%</div>
+                    <p>Aumento en tasa de conversión</p>
+                    <small>Primeros 6 meses post-implementación</small>
+                </div>
+
+                <div class="resultado-card">
+                    <div class="resultado-number">+120%</div>
+                    <p>Incremento en customer lifetime value</p>
+                    <small>Retención mejorada y upsell automático</small>
+                </div>
+
+                <div class="resultado-card">
+                    <div class="resultado-number">-35%</div>
+                    <p>Reducción en costo de adquisición</p>
+                    <small>Automatización de seguimiento</small>
+                </div>
+
+                <div class="resultado-card">
+                    <div class="resultado-number">+89%</div>
+                    <p>Mayor engagement de clientes</p>
+                    <small>Con mensajes personalizados y automáticos</small>
+                </div>
+
+                <div class="resultado-card">
+                    <div class="resultado-number">+200%</div>
+                    <p>Aumento de leads re-engaged</p>
+                    <small>Mediante workflows de automation</small>
+                </div>
+
+                <div class="resultado-card">
+                    <div class="resultado-number">24/7</div>
+                    <p>Atención al cliente automática</p>
+                    <small>Chatbots y workflows sin intervención</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Metodología -->
+    <section class="metodologia-section">
+        <div class="container">
+            <h2>Metodología Aplicada</h2>
+            <div class="metodologia-grid">
+                <div class="metodo-item">
+                    <span class="metodo-icon">📊</span>
+                    <h4>Discovery & Analysis</h4>
+                    <p>Análisis profundo del estado actual y mapping del customer journey existente</p>
+                </div>
+                <div class="metodo-item">
+                    <span class="metodo-icon">🎯</span>
+                    <h4>Strategy Design</h4>
+                    <p>Diseño de la estrategia de customer journey y definición de KPIs</p>
+                </div>
+                <div class="metodo-item">
+                    <span class="metodo-icon">⚙️</span>
+                    <h4>Implementation</h4>
+                    <p>Configuración de HubSpot, integraciones y automation workflows</p>
+                </div>
+                <div class="metodo-item">
+                    <span class="metodo-icon">📈</span>
+                    <h4>Optimization</h4>
+                    <p>Testing A/B, análisis de datos y mejora continua</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Competencias -->
+    <section class="competencias-section">
+        <div class="container">
+            <h2>Competencias Demostradas</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <h4>HubSpot CRM</h4>
+                    <div class="skill-bar">
+                        <div class="skill-fill" style="width: 95%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <h4>Marketing Automation</h4>
+                    <div class="skill-bar">
+                        <div class="skill-fill" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <h4>Customer Journey Mapping</h4>
+                    <div class="skill-bar">
+                        <div class="skill-fill" style="width: 92%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <h4>Data Analytics</h4>
+                    <div class="skill-bar">
+                        <div class="skill-fill" style="width: 88%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <h4>Lead Scoring & Nurturing</h4>
+                    <div class="skill-bar">
+                        <div class="skill-fill" style="width: 91%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <h4>Workflow Optimization</h4>
+                    <div class="skill-bar">
+                        <div class="skill-fill" style="width: 89%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section id="contacto" class="contacto-section">
+        <div class="container">
+            <h2>¿Quieres conocer más?</h2>
+            <p>Estoy disponible para discutir cómo implementar estrategias similares en tu empresa</p>
+
+            <div class="contacto-info">
+                <a href="mailto:pablogarciaverdu1@gmail.com" class="contact-btn">
+                    <i class="fas fa-envelope"></i> Email
+                </a>
+                <a href="https://linkedin.com" class="contact-btn">
+                    <i class="fas fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://github.com" class="contact-btn">
+                    <i class="fas fa-github"></i> Portfolio
+                </a>
+            </div>
+
+            <div class="about-text">
+                <h3>Sobre Pablo García Verdú</h3>
+                <p>
+                    Experto en HubSpot y optimización de customer journey con más de 5 años de experiencia en transformación digital.
+                    Especializado en la implementación de estrategias de marketing automation y CRM que generan resultados medibles
+                    y alineados con objetivos empresariales.
+                </p>
+                <p>
+                    Apasionado por entender el comportamiento del cliente y traducir insights en acciones estratégicas que mejoren
+                    la experiencia y rentabilidad.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Pablo García Verdú | Experto en HubSpot & Customer Journey</p>
+            <p>Caso Práctico: CARGLASS - Transformación Digital</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
             justify-content: center;
             color: white;
             font-weight: 900;
