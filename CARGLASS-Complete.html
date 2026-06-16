@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pablo García Verdú - CARGLASS Case Study</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primary: #003d7a;
+    --accent: #ff6b35;
+    --light-bg: #f8f9fa;
+    --text: #333;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    color: var(--text);
+    background: white;
+}
+
+/* ============= LANDING PAGE ============= */
+.landing-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--primary) 0%, #0056b3 100%);
+    color: white;
+    padding: 20px;
+}
+
+.landing-content {
+    text-align: center;
+    max-width: 700px;
+}
+
+.landing-content h1 {
+    font-size: 56px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+
+.landing-content .subtitle {
+    font-size: 24px;
+    margin-bottom: 30px;
+    opacity: 0.95;
+    font-weight: 400;
+}
+
+.landing-content .description {
+    font-size: 16px;
+    margin-bottom: 50px;
+    opacity: 0.9;
+    line-height: 1.8;
+}
+
+.cta-button {
+    background: var(--accent);
+    color: white;
+    padding: 18px 50px;
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cta-button:hover {
+    background: #ff5620;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(255, 107, 53, 0.4);
+}
+
+/* ============= CASE STUDY PAGE ============= */
+.case-study-page {
+    display: none;
+}
+
+.case-study-page.active {
+    display: block;
+}
+
+/* Navigation */
+.navbar {
+    background: linear-gradient(135deg, var(--primary) 0%, #002d5a 100%);
+    color: white;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 61, 122, 0.15);
+}
+
+.navbar .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar-brand h1 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 12px;
+    padding: 8px 12px;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+
+/* Sections */
+.section {
+    display: none;
+    min-height: 100vh;
+    padding: 60px 20px;
+    animation: fadeIn 0.5s ease;
+}
+
+.section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.section-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.section h1 {
+    font-size: 42px;
+    color: var(--primary);
+    margin-bottom: 40px;
+    font-weight: 800;
+}
+
+.section h2 {
+    font-size: 28px;
+    color: var(--primary);
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.section h3 {
+    font-size: 20px;
+    color: var(--primary);
+    margin-top: 25px;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.section p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.section ul {
+    list-style: none;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.section li {
+    padding: 8px 0;
+    padding-left: 25px;
+    position: relative;
+    color: #555;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.section li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+.highlight-box {
+    background: #f0f8fb;
+    border-left: 4px solid var(--accent);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+
+/* Funnel Diagram */
+.funnel-container {
+    margin: 40px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.funnel-stage {
+    background: linear-gradient(90deg, var(--primary), #0056b3);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    min-width: 80%;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 61, 122, 0.15);
+}
+
+.funnel-stage.stage1 { width: 100%; }
+.funnel-stage.stage2 { width: 95%; }
+.funnel-stage.stage3 { width: 90%; }
+.funnel-stage.stage4 { width: 85%; }
+.funnel-stage.stage5 { width: 80%; }
+.funnel-stage.stage6 { width: 75%; }
+.funnel-stage.stage7 { width: 70%; }
+
+.funnel-stage-title {
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.funnel-stage-desc {
+    font-size: 12px;
+    opacity: 0.9;
+}
+
+.annotation-box {
+    background: #fff3e0;
+    border: 2px solid var(--accent);
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.8;
+}
+
+/* Navigation Buttons */
+.nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.btn-prev, .btn-next {
+    background: var(--primary);
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.btn-prev:hover, .btn-next:hover {
+    background: var(--accent);
+    transform: translateY(-2px);
+}
+
+.btn-prev:disabled, .btn-next:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Cards Grid */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin: 30px 0;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    border-top: 4px solid var(--primary);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 10px 30px rgba(0, 61, 122, 0.15);
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-links {
+        gap: 8px;
+    }
+
+    .nav-links a {
+        font-size: 10px;
+        padding: 6px 8px;
+    }
+
+    .section {
+        padding: 40px 15px;
+    }
+
+    .section h1 {
+        font-size: 28px;
+        margin-bottom: 25px;
+    }
+
+    .funnel-stage {
+        min-width: 95%;
+    }
+
+    .nav-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .landing-content h1 {
+        font-size: 32px;
+    }
+
+    .navbar-brand h1 {
+        font-size: 16px;
+    }
+
+    .section h1 {
+        font-size: 22px;
+    }
+
+    .section h2 {
+        font-size: 18px;
+    }
+
+    .section p, .section li {
+        font-size: 13px;
+    }
+}
+    </style>
+</head>
+<body>
+
+<!-- ========== LANDING PAGE ========== -->
+<div class="landing-page" id="landingPage">
+    <div class="landing-content">
+        <h1>Pablo García Verdú</h1>
+        <p class="subtitle">Experto en HubSpot & Customer Journey</p>
+        <p class="description">
+            Transformo negocios mediante automatización inteligente, estrategias de CRM y optimización del customer journey.
+            Especializado en implementar soluciones que generan resultados medibles.
+        </p>
+        <button class="cta-button" onclick="startCaseStudy()">Explorar Caso CARGLASS</button>
+    </div>
+</div>
+
+<!-- ========== CASE STUDY PAGE ========== -->
+<div class="case-study-page" id="caseStudyPage">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <h1>CARGLASS Case Study</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a onclick="goToSection(0)" class="section-link" data-index="0">Lifecycle</a></li>
+                <li><a onclick="goToSection(1)" class="section-link" data-index="1">Automatizaciones</a></li>
+                <li><a onclick="goToSection(2)" class="section-link" data-index="2">Setup HubSpot</a></li>
+                <li><a onclick="goToSection(3)" class="section-link" data-index="3">Colaboración</a></li>
+                <li><a onclick="goToSection(4)" class="section-link" data-index="4">Calidad Dato</a></li>
+                <li><a onclick="goToSection(5)" class="section-link" data-index="5">1º Trimestre</a></li>
+                <li><a onclick="goToSection(6)" class="section-link" data-index="6">Test A/B</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- SECCIÓN 0: LIFECYCLE -->
+    <section class="section active" data-index="0">
+        <div class="section-content">
+            <h1>LIFECYCLE RESUMIDO</h1>
+
+            <div class="funnel-container">
+                <div class="funnel-stage stage1">
+                    <div class="funnel-stage-title">1. Awareness</div>
+                    <div class="funnel-stage-desc">El cliente tiene la luna rota, decide que la mejor opción por reconocimiento o recomendación es Carglass.</div>
+                </div>
+
+                <div class="funnel-stage stage2">
+                    <div class="funnel-stage-title">2. Consideration</div>
+                    <div class="funnel-stage-desc">Visita la página de Carglass para poder pedir una cita.</div>
+                </div>
+
+                <div class="funnel-stage stage3">
+                    <div class="funnel-stage-title">3. Reserva de cita</div>
+                    <div class="funnel-stage-desc">Inicia reserva a través del formulario web o llamada al taller más cercano.</div>
+                </div>
+
+                <div class="funnel-stage stage4" style="background: linear-gradient(90deg, #d32f2f, #c62828); box-shadow: 0 4px 15px rgba(211, 47, 47, 0.2);">
+                    <div class="funnel-stage-title">4. Periodo de espera ⚠️</div>
+                    <div class="funnel-stage-desc">Una vez reservado espera varios días hasta que acude a la cita. (AQUÍ ES DONDE SE CAEN DEL JOURNEY)</div>
+                </div>
+
+                <div class="funnel-stage stage5">
+                    <div class="funnel-stage-title">5. Cambio de la luna</div>
+                    <div class="funnel-stage-desc">Se le realiza el trabajo acordado.</div>
+                </div>
+
+                <div class="funnel-stage stage6">
+                    <div class="funnel-stage-title">6. Servicio post-venta</div>
+                    <div class="funnel-stage-desc">Envío de encuesta para valoración de servicio</div>
+                </div>
+
+                <div class="funnel-stage stage7">
+                    <div class="funnel-stage-title">7. Loyalty</div>
+                    <div class="funnel-stage-desc">Referencia, repite y compra productos complementarios.</div>
+                </div>
+            </div>
+
+            <div class="annotation-box">
+                <strong>Partiendo de esta situación hipotética, hay que tener en cuenta que cada etapa supone una automatización distinta, el cliente está en un punto de la relación con nosotros distinto. Por lo que el enfoque del mensaje y el objetivo variará…</strong>
+            </div>
+
+            <div class="nav-buttons">
+                <button class="btn-prev" onclick="prevSection()" disabled>← Anterior</button>
+                <button class="btn-next" onclick="nextSection()">Siguiente →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 1: AUTOMATIZACIONES -->
+    <section class="section" data-index="1">
+        <div class="section-content">
+            <h1>Automatizaciones Prioritarias</h1>
+
+            <h2>AUTOMATIZACIÓN 1: Recuperar "carrito abandonado"</h2>
+
+            <p>Cuando alguien que ya tenemos en nuestra bbdd con comunicación por whatsapp, correo o ambas. Entra en web, empieza el proceso de reserva de una cita pero no llega a hacerlo generarle un flujo dependiendo del punto donde se ha perdido la conversión.</p>
+
+            <h3>El flujo:</h3>
+
+            <ul>
+                <li><strong>De 0-1 hora:</strong> Email educativo. "Te falta solo un paso. ¿Necesitas ayuda?" Tono amable, sin presión. Personalizado según el punto del formulario de reserva se quedó.</li>
+                <li><strong>A las 2 horas:</strong> Chatbot WhatsApp. Aquí el chatbot NO trata de vender, mas bien pregunta "¿Qué necesitas saber?" y responde automáticamente, como por ejemplo:
+                    <ul style="margin-top: 10px;">
+                        <li>¿Cuánto cuesta? El sistema le responde inmediatamente con tablas de precios</li>
+                        <li>¿Qué marcas reparáis? Se le muestra el listado completo de marcas que trabaja Carglass</li>
+                        <li>¿Qué horarios tenéis? Muestra la disponibilidad de los talleres según Código Postal.</li>
+                    </ul>
+                </li>
+                <li>Su objetivo es volver a llevarlo al flujo de reserva de web</li>
+                <li><strong>Tras 24 horas:</strong> Email final que muestre la calidad del servicio y materiales de Carglass + oferta 15% dto.</li>
+            </ul>
+
+            <h3>Aspectos a tener en cuenta:</h3>
+
+            <ul>
+                <li>Cada automatización ocurre cuando la anterior no ha logrado reconvertir al prospecto.</li>
+                <li>Importante hacer una segmentación en esta automation: ¿Dónde abandonó? ¿En contacto? ¿Matricula? ¿Fecha? Cada uno recibe un mensaje diferente. Un abandono en "fecha" no necesita volver a explicar qué es Carglass. Necesita solo saber que puede venir en horario que mejor le encaja (según disponibilidad). Pudiendo llegar a recuperar un 15% ,20% del abandono.</li>
+            </ul>
+
+            <h2>AUTOMATIZACIÓN 2: Evitar el % de No-show en las reservas</h2>
+
+            <p>La mayoría de "no-show" puede ocurrir porque han encontrado algo más barato o porque se les olvida. Aquí la estrategia es diferente, habría que enfocar las automatizaciones a una fase más avanzada.</p>
+
+            <h3>El flujo:</h3>
+
+            <h3 style="color: #ff6b35;">48 horas antes:</h3>
+
+            <p>Se enviará un email personalizado que vaya más allá del nombre o el modelo. Algo como: "Tienes un Audi A4, así que deberías revisar las escobillas y hacer un tratamiento antilluvia pronto".</p>
+
+            <p>Para esto haremos uso de Chat GPT, BBDD interna y N8N. Así, cuando un cliente entra en el sistema con su modelo de coche, N8N analiza los productos por categoria y stock según taller y la API de GPT analiza el vehículo (tipo, antigüedad, etc.) y esta info de la bbdd interna, rellena automáticamente una propiedad en HubSpot llamada "Recomendación IA".</p>
+
+            <p>Ejemplo: Un cliente tiene un Audi A4 de hace 5 años → la IA acude a la bbdd, según esa antigüedad, el stock en zona y esa categoría de coche le sugiere revisar escobillas o tratamiento antilluvia, y eso aparece personalizado en el email/chatbot</p>
+
+            <p>Al final todo tipo de dato que recibamos del vehículo y del perfil del cliente con la IA se puede analizar, sacar provecho de esta y generar ventas cruzadas personalizadas y con sentido.</p>
+
+            <h3 style="color: #ff6b35;">24 horas antes:</h3>
+
+            <p>Envío de un SMS recordatorio + link para confirmar. "¿Confirmas tu cita mañana a las 10:00?". Que le lleve a una landing page muy sencilla con la hora, día, ubicación y un botón de confirmación, cancelar o reprogramar.</p>
+
+            <h3 style="color: #ff6b35;">6 horas antes (aquí entra el segundo agente IA):</h3>
+
+            <p>Envío de SMS con tono cercano y a modo de recordatorio "Pablo nos vemos a las 12:30 en Avd Marina 312-314"</p>
+
+            <p>Opcional: Agente de voz IA que llama 90 minutos antes si aún no ha confirmado. No es una llamada grabada. Es un agente que puede:</p>
+
+            <ul>
+                <li>Confirmar que va a ir.</li>
+                <li>Cancela visita al taller.</li>
+                <li>Reprograma visita al taller.</li>
+                <li>La voz suena natural, se podría llegar a clonar a un humano real, sorprende el resultado.</li>
+            </ul>
+
+            <p>Con estas automatizaciones apoyadas de inteligencia artificial, permiten personalizar y asegurar que el proceso de confirmación se haga correctamente y en su debido momento. El cliente se siente acompañado, no acosado.</p>
+
+            <h2>A TENER EN CUENTA:</h2>
+
+            <p>Tan importante es, tener bien definido un flujo de reservas y recordatorios a los clientes como evaluar el trabajo que le hemos ofrecido al cliente.</p>
+
+            <p>Por ello, lo ideal es que una vez en nuestro sistema de HubSpot detecte que el mecánico le ha hecho el trabajo y está todo ya firmado y pagado por el cliente, debemos de cerrar el círculo con:</p>
+
+            <ul>
+                <li><strong>30 minutos después:</strong> Envió de email de agradecimiento por confiar en servicio Carglass, dejar los datos del taller por si llega a ocurrir algún fallo y un botón bien claro para dejar una puntuación en un formulario NPS.</li>
+                <li><strong>24h después:</strong> Si no lo rellena, hacer una llamada de call center para poder conocer su opinión.</li>
+            </ul>
+
+            <p>Desde HubSpot se pueden hacer este tipo de encuestas, de modo que en el área de paneles se pueden construir informes con los que poder ver la evolución de la satisfacción, ratio de respuesta, etc.</p>
+
+            <div class="nav-buttons">
+                <button class="btn-prev" onclick="prevSection()">← Anterior</button>
+                <button class="btn-next" onclick="nextSection()">Siguiente →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 2: SETUP HUBSPOT -->
+    <section class="section" data-index="2">
+        <div class="section-content">
+            <h1>Setup HUBSPOT</h1>
+
+            <h2>CONFIGURACIÓN CRM EN HUBSPOT (LO OPERATIVO)</h2>
+
+            <p>Las patas principales de una cuenta de HubSpot para Carglass, serían: Automatizaciones, el área de Negocios, los Contactos, las Empresas, los Segmentos y el Reporting</p>
+
+            <p>(Tickets no, porque según entendí en la última reunión se gestionan por otra plataforma, pero también sería viable y óptimo si queremos tomar mejores decisiones y acertar con las comunicaciones)</p>
+
+            <h3>Contactos</h3>
+
+            <p>Nombre, email, teléfono, vehículo (marca/modelo/año), segmento cliente, código postal, ciudad, canal preferido de comunicación.</p>
+
+            <h3>Deal (la reserva/servicio)</h3>
+
+            <p>Aquí me imagino un flujo de bien definido, donde la primera columna sería Reserva fijada → Reserva confirmada → Asistencia al taller → No asistencia al taller → Reserva cancelada.</p>
+
+            <p>Dentro del deal, introducir toda la información relevante del cliente, como: Tipo de servicio, estado de reserva (reservado → confirmado → cambiada → cancelado), estado del servicio (pendiente → producto pedido → hecho), cantidad a pagar, día de la cita, productos para crosseling con su precio, control tiempo que lleva en cada etapa.</p>
+
+            <p>Aquí es cuestión de entender el negocio y ver qué datos nos sirven para tomar mejores decisiones. Además de crearnos vistas para poder filtrar rapido por categoría de interes, los filtros son clave.</p>
+
+            <h3>Segmentaciones que tendría en cuenta:</h3>
+
+            <ul>
+                <li><strong>Nuevos:</strong> Más probabilidad de no-show (no conocen el proceso, taller o servicio)
+                    <ul style="margin-top: 8px;">
+                        <li>Estrategia: Email más detallado, recordatorios más "agresivos".</li>
+                    </ul>
+                </li>
+                <li><strong>Recurrentes:</strong> Menos no-show, pero riesgo de ir a competencia
+                    <ul style="margin-top: 8px;">
+                        <li>Estrategia: Ofrecer descuentos, tratamientos adicionales (antilluvia, etc.)</li>
+                    </ul>
+                </li>
+                <li><strong>Reparación pequeña:</strong> Estas suelen ser rápidas, con una urgencia baja y pueden tener una alta cancelación
+                    <ul style="margin-top: 8px;">
+                        <li>Estrategia: Generar alerta con descuentos temporales solo si asisten a esa cita.</li>
+                    </ul>
+                </li>
+                <li><strong>Reparación grande:</strong> Supone más gasto para el cliente, estará comprometido
+                    <ul style="margin-top: 8px;">
+                        <li>Estrategia: Información técnica, detalles desglosados del proceso. Presencia de descuento, al ser un ticket alto un descuento lo valoran más fuerte.</li>
+                    </ul>
+                </li>
+                <li><strong>Según el modelo del vehículo:</strong> Dependiendo del coche tienen más nivel adquisitivo, y debe de haber una relación directa. Mi hipótesis es que cuanto más alto sea el valor del coche menos no-show y a menor valor del coche mayor será el no-show.
+                    <ul style="margin-top: 8px;">
+                        <li>Estrategia: Al que tenga un coche de menor gama, incentivar con descuentos o regalo de productos baratos pero que le aporten un valor añadido para venir con Carglass (lo mismo pasaría con la antigüedad del coche, más antiguo supone que tiene menos capacidad económica y al revés con los vehículos más nuevos.)</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>Workflows automáticos</h3>
+
+            <ul>
+                <li>Anti-abandono (chatbot WhatsApp)</li>
+                <li>Pre-service journey (48h, 24h, 6h, agente voz horas antes si no ha reservado).</li>
+                <li>Post-service feedback.</li>
+                <li>Programar un flujo de comunicaciones a lo largo del año, según condiciones climáticas, estaciones, etc.</li>
+            </ul>
+
+            <h3>Reporting</h3>
+
+            <ul>
+                <li>Funnel de conversión.</li>
+                <li>No-show rate por segmento.</li>
+                <li>VAPS rate.</li>
+                <li>Tiempo promedio desde reserva hasta servicio.</li>
+                <li>Tiempos de espera desde que reserva hasta que se lo reaparan, por zonas de españa.</li>
+            </ul>
+
+            <div class="nav-buttons">
+                <button class="btn-prev" onclick="prevSection()">← Anterior</button>
+                <button class="btn-next" onclick="nextSection()">Siguiente →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 3: COLABORACIÓN EQUIPOS -->
+    <section class="section" data-index="3">
+        <div class="section-content">
+            <h1>Colaboración con otros equipos</h1>
+
+            <p>Para que un CRM tenga verdadero valor y sea útil para el equipo y la dirección, necesita estar lleno de datos que importen. Sin ellos, no hay nada que hacer. Es como construir una casa: sin ladrillos y cemento no puedes hacer un chalet, solo una caseta que no vale la pena.</p>
+
+            <p>Por eso es clave que todos los equipos que toquen el proceso, desde la reserva hasta el cobro, conozcan cómo funciona HubSpot. No tienen que usarlo directamente, pero yo necesito entender qué hacen, dónde están en el flujo y cómo puedo ayudarles yo a ellos con posibles informes y ellos a mí con datos que generan.</p>
+
+            <p>Por ejemplo con la post-venta: un cliente reserva cita, entra en HubSpot, generamos todo el journey (recordatorios, SMS, llamadas automáticas), asiste a la cita y se le arregla la luna. Además, el taller le vende unas escobillas, si yo tengo esa información, puedo meterle en un segmento de ventas de escobilla VAPS y no volver a impactarle con el mismo producto hasta dentro de x meses. Es perder balas.</p>
+
+            <p>El detalle es que la información es poder. Quien tenga los datos, controla la estrategia. Para esto debería de estar en contacto con IT, dueño de los datos y sistemas, creativo/a para mailing y encargado de generar los leads de las reservas.</p>
+
+            <div class="nav-buttons">
+                <button class="btn-prev" onclick="prevSection()">← Anterior</button>
+                <button class="btn-next" onclick="nextSection()">Siguiente →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 4: CALIDAD DE DATO -->
+    <section class="section" data-index="4">
+        <div class="section-content">
+            <h1>Calidad del dato</h1>
+
+            <p>Antes de automatizar nada, necesitamos una base de datos limpia. Sin datos de calidad, no funciona.</p>
+
+            <p>Lo básico que hay que revisar: Primero, eliminar duplicados. La matrícula por hipótesis debería de ser el identificador único en todos los objetos.</p>
+
+            <p>Segundo, los formularios. Los checkboxes de consentimiento y política de privacidad tienen que estar bien configurados y llegar a HubSpot con el valor correcto. Si no, incumplimos GDPR y esto puede suponer multa millonaria.</p>
+
+            <p>Tercero, segmentación clara. Crear un segmento en HubSpot para los que no aceptaron comunicaciones y excluirlos de TODAS las automaciones.</p>
+
+            <p>Y lo importante: auditar cuántos contactos tienes como "marketing user". Ya que HubSpot cobra por eso, si te pasas del límite, te cobran sin avisar.</p>
+
+            <div class="nav-buttons">
+                <button class="btn-prev" onclick="prevSection()">← Anterior</button>
+                <button class="btn-next" onclick="nextSection()">Siguiente →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 5: 1º TRIMESTRE -->
+    <section class="section" data-index="5">
+        <div class="section-content">
+            <h1>LAS 3 INICIATIVAS QUE PRIORIZARÍA EN 1º TRIMESTRE</h1>
+
+            <div class="card-grid">
+                <div class="card">
+                    <h3>1. Recuperación de abandono</h3>
+                    <p><strong style="color: var(--accent);">Máxima prioridad</strong></p>
+                    <p><strong>Por qué:</strong> La tasa de abandono es muy elevada = pérdida directa de ingresos. Es dinero en la mesa que estás regalando.</p>
+                    <p><strong>Métrica:</strong> Abandonment Recovery Rate, Cost per Booking Recovered.</p>
+                    <p><strong>Herramientas:</strong> Call Center confirma cita y resuelve dudas del presupuesto, Chatbot WhatsApp + email secuencial hiper personalizado.</p>
+                </div>
+
+                <div class="card">
+                    <h3>2. Confirmación y Recordatorio</h3>
+                    <p><strong style="color: var(--accent);">Alta prioridad</strong></p>
+                    <p><strong>Por qué:</strong> 18% no-show, es decir, ineficiencia de las reservas. Técnicos esperando, slots de reserva vacíos.</p>
+                    <p><strong>Impacto:</strong> Reducir a 10%</p>
+                    <p><strong>Métrica:</strong> No-show Rate, Confirmación Rate.</p>
+                    <p><strong>Herramientas:</strong> Call Center confirmación, SMS + Agente de voz IA.</p>
+                </div>
+
+                <div class="card">
+                    <h3>3. NPS Post-Servicio</h3>
+                    <p><strong style="color: var(--accent);">Media-Alta</strong></p>
+                    <p><strong>Por qué:</strong> Se necesita feedback honesto y humano. ¿Quién está in/satisfecho? ¿Quién se va a otra marca? ¿Quién te va a recomendar?</p>
+                    <p><strong>Impacto:</strong> Identificar detractores para reactivar, impulsar referencias, score de clientes.</p>
+                    <p><strong>Métrica:</strong> NPS, Reactivation Rate.</p>
+                    <p><strong>Herramientas:</strong> Formulario NPS, correo automático.</p>
+                </div>
+            </div>
+
+            <div class="nav-buttons">
+                <button class="btn-prev" onclick="prevSection()">← Anterior</button>
+                <button class="btn-next" onclick="nextSection()">Siguiente →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 6: TEST A/B -->
+    <section class="section" data-index="6">
+        <div class="section-content">
+            <h1>TEST A/B</h1>
+
+            <h2>SOBRE EL A/B TEST: POR QUÉ GANÓ LA VARIANTE B</h2>
+
+            <div class="card-grid">
+                <div class="card">
+                    <h3>Variante A</h3>
+                    <p>1 email 24h antes.</p>
+                    <p><strong>"Te esperamos mañana."</strong></p>
+                </div>
+
+                <div class="card">
+                    <h3>Variante B</h3>
+                    <p>2 emails (48h + 24h).</p>
+                    <p><strong>"Confirma tu asistencia."</strong></p>
+                </div>
+            </div>
+
+            <h2>Resultados:</h2>
+
+            <div class="highlight-box">
+                <ul>
+                    <li><strong>No-show A:</strong> 18%</li>
+                    <li><strong>No-show B:</strong> 6%</li>
+                    <li><strong>VAPS A:</strong> 16% vs <strong>VAPS B:</strong> 8%</li>
+                </ul>
+            </div>
+
+            <p>Elegiría sin duda el B, porque el no-show es el problema mayor. Perder un cliente que no aparece cuesta más que una venta cruzada complementaria a la cita no realizada. Ejemplo: Cambio de luna= 300€ V.S Escobillas= 30€</p>
+
+            <p>Pero también se puede ver como, no me voy a quedar con uno y el otro lo descarto. Hay que separar los flujos. Usaría B para confirmación (porque baja no-show). Y el email A una vez me han confirmado la cita, ya que el VAPS rate es mayor, este se puede enviar unos días antes de la cita o 48h después de confirmarme</p>
+
+            <h2>PROPUESTA IA:</h2>
+
+            <h3>1. Chatbot WhatsApp (Automático en 60 minutos)</h3>
+
+            <p>No es un bot de "presiona 1 para reservar". Es un chatbot conversacional que entiende:</p>
+
+            <ul>
+                <li>Preguntas en lenguaje natural</li>
+                <li>Contexto del usuario (si abandonó en "vehículo", sabe que lo importante es elegir marca)</li>
+                <li>Integración con HubSpot (busca el contacto, ve su historial, adapta respuestas)</li>
+            </ul>
+
+            <p><strong>Responde automáticamente:</strong></p>
+
+            <ul>
+                <li>Precios</li>
+                <li>Horarios disponibles</li>
+                <li>Recomendaciones de servicios</li>
+                <li>Cambios de cita</li>
+                <li>Garantías</li>
+            </ul>
+
+            <p><strong>Proveedor:</strong> Twilio + OpenAI API</p>
+
+            <h3>2. Agente de Voz IA (Opcional, 90 minutos antes si no confirmó)</h3>
+
+            <p>Llamada automática (número de Carglass) que:</p>
+
+            <ul>
+                <li>Confirma que va a ir</li>
+                <li>Pregunta si estará en casa (domicilio)</li>
+                <li>Ofrece cambio de hora si es necesario</li>
+                <li>Contesta preguntas básicas</li>
+            </ul>
+
+            <p>La voz suena humana. No es un mensaje grabado.</p>
+
+            <p><strong>Proveedor:</strong> Twilio + Google Text-to-Speech o Verbo.ai o DAPTA</p>
+
+            <h3>3. Recomendación Dinámica de VAPS</h3>
+
+            <p>Email de 48h antes con recomendación IA:</p>
+
+            <ul>
+                <li>Analiza vehículo del cliente (año, marca, modelo)</li>
+                <li>Analiza historial (última vez que compró VAPS, qué compró)</li>
+                <li>Sugiere servicios relevantes con probabilidad de compra</li>
+            </ul>
+
+            <p><strong>Proveedor:</strong> HubSpot + N8N + API GPT 5 +</p>
+
+            <div class="nav-buttons">
+                <button class="btn-prev" onclick="prevSection()">← Anterior</button>
+                <button class="btn-next" onclick="nextSection()" disabled>Siguiente →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: var(--primary); color: white; text-align: center; padding: 30px 20px;">
+        <p>&copy; 2026 Pablo García Verdú | Experto en HubSpot & Customer Journey</p>
+        <p>Caso Práctico: CARGLASS - Transformación Digital</p>
+    </footer>
+</div>
+
+<script>
+let currentSection = -1;
+
+function startCaseStudy() {
+    document.getElementById('landingPage').style.display = 'none';
+    document.getElementById('caseStudyPage').style.display = 'block';
+    goToSection(0);
+}
+
+function goToSection(index) {
+    const sections = document.querySelectorAll('.section');
+    sections.forEach(s => s.classList.remove('active'));
+
+    sections[index].classList.add('active');
+
+    const links = document.querySelectorAll('.section-link');
+    links.forEach(l => l.classList.remove('active'));
+    links[index].classList.add('active');
+
+    currentSection = index;
+    updateButtonStates();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function nextSection() {
+    const sections = document.querySelectorAll('.section');
+    if (currentSection < sections.length - 1) {
+        goToSection(currentSection + 1);
+    }
+}
+
+function prevSection() {
+    if (currentSection > 0) {
+        goToSection(currentSection - 1);
+    }
+}
+
+function updateButtonStates() {
+    const sections = document.querySelectorAll('.section');
+    const prevBtn = document.querySelector('.btn-prev');
+    const nextBtn = document.querySelector('.btn-next');
+
+    if (prevBtn) prevBtn.disabled = currentSection === 0;
+    if (nextBtn) nextBtn.disabled = currentSection === sections.length - 1;
+}
+</script>
+
+</body>
+</html>
