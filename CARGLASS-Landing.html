@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pablo García Verdú - Experto HubSpot & Customer Journey</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primary: #003d7a;
+    --accent: #ff6b35;
+    --light-bg: #f8f9fa;
+    --text: #333;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    color: var(--text);
+    background: white;
+}
+
+/* ============= LANDING PAGE ============= */
+.landing-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--primary) 0%, #0056b3 100%);
+    color: white;
+    padding: 20px;
+}
+
+.landing-content {
+    text-align: center;
+    max-width: 700px;
+}
+
+.landing-content h1 {
+    font-size: 56px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+
+.landing-content .subtitle {
+    font-size: 24px;
+    margin-bottom: 30px;
+    opacity: 0.95;
+    font-weight: 400;
+}
+
+.landing-content .description {
+    font-size: 16px;
+    margin-bottom: 50px;
+    opacity: 0.9;
+    line-height: 1.8;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    background: var(--accent);
+    color: white;
+    padding: 18px 50px;
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cta-button:hover {
+    background: #ff5620;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(255, 107, 53, 0.4);
+}
+
+.cta-button:active {
+    transform: translateY(-1px);
+}
+
+/* ============= CASE STUDY PAGE ============= */
+.case-study-page {
+    display: none;
+}
+
+.case-study-page.active {
+    display: block;
+}
+
+/* Navigation */
+.navbar {
+    background: linear-gradient(135deg, var(--primary) 0%, #002d5a 100%);
+    color: white;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 61, 122, 0.15);
+}
+
+.navbar .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.navbar-brand h1 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 13px;
+    padding: 8px 0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    border-bottom-color: var(--accent);
+    color: var(--accent);
+}
+
+/* Sections */
+.section {
+    display: none;
+    padding: 80px 20px;
+    min-height: 100vh;
+    animation: fadeIn 0.5s ease;
+}
+
+.section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.section.hero {
+    background: linear-gradient(135deg, var(--primary) 0%, #0056b3 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section.hero-content {
+    max-width: 1000px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.section.hero h1 {
+    font-size: 56px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.section.hero h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    opacity: 0.95;
+}
+
+.section.hero p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.section h2 {
+    font-size: 42px;
+    color: var(--primary);
+    margin-bottom: 40px;
+}
+
+.section h3 {
+    font-size: 24px;
+    color: var(--primary);
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.section p, .section li {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.section ul {
+    list-style: none;
+    margin-left: 20px;
+}
+
+.section li {
+    padding-left: 25px;
+    position: relative;
+}
+
+.section li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+.highlight {
+    background: #fff3e0;
+    padding: 20px;
+    border-left: 4px solid var(--accent);
+    margin: 20px 0;
+    border-radius: 4px;
+}
+
+/* Card Grid */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    border-top: 4px solid var(--primary);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 10px 30px rgba(0, 61, 122, 0.15);
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    margin-top: 0;
+}
+
+/* Footer */
+.footer {
+    background: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.footer p {
+    margin: 5px 0;
+    opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .landing-content h1 {
+        font-size: 36px;
+    }
+
+    .landing-content .subtitle {
+        font-size: 18px;
+    }
+
+    .section h2 {
+        font-size: 28px;
+    }
+
+    .nav-links {
+        gap: 10px;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+    }
+
+    .navbar-brand h1 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .landing-content h1 {
+        font-size: 28px;
+    }
+
+    .landing-content .subtitle {
+        font-size: 16px;
+    }
+
+    .cta-button {
+        padding: 14px 30px;
+        font-size: 14px;
+    }
+
+    .section {
+        padding: 40px 15px;
+    }
+
+    .section h2 {
+        font-size: 24px;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+}
+    </style>
+</head>
+<body>
+
+<!-- ========== LANDING PAGE ========== -->
+<div class="landing-page" id="landingPage">
+    <div class="landing-content">
+        <h1>Pablo García Verdú</h1>
+        <p class="subtitle">Experto en HubSpot & Customer Journey</p>
+        <p class="description">
+            Transformo negocios mediante automatización inteligente, estrategias de CRM y optimización del customer journey.
+            Especializado en implementar soluciones que generan resultados medibles.
+        </p>
+        <button class="cta-button" onclick="startCaseStudy()">Explorar Caso CARGLASS</button>
+    </div>
+</div>
+
+<!-- ========== CASE STUDY PAGE ========== -->
+<div class="case-study-page" id="caseStudyPage">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <h1>Pablo García Verdú</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a onclick="showSection('hero')" class="section-link active" data-section="hero">Inicio</a></li>
+                <li><a onclick="showSection('automatizaciones')" class="section-link" data-section="automatizaciones">Automatizaciones</a></li>
+                <li><a onclick="showSection('crm')" class="section-link" data-section="crm">CRM HubSpot</a></li>
+                <li><a onclick="showSection('ia')" class="section-link" data-section="ia">Herramientas IA</a></li>
+                <li><a onclick="showSection('resultados')" class="section-link" data-section="resultados">Resultados</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- SECCIÓN 1: HERO -->
+    <section class="section hero active" id="hero" data-section="hero">
+        <div class="section hero-content">
+            <h1>CARGLASS</h1>
+            <h2>Optimización del Customer Journey con HubSpot y Automatización IA</h2>
+            <p>Caso práctico: Recuperación de abandonos, reducción de no-shows y fidelización de clientes</p>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 2: AUTOMATIZACIONES -->
+    <section class="section" id="automatizaciones" data-section="automatizaciones">
+        <div class="container">
+            <h2>Automatizaciones Prioritarias</h2>
+
+            <h3>1. Recuperar "Carrito Abandonado"</h3>
+            <p>Cuando alguien que ya tenemos en nuestra bbdd con comunicación por whatsapp, correo o ambas entra en web, empieza el proceso de reserva de una cita pero no llega a hacerlo, se genera un flujo dependiendo del punto donde se ha perdido la conversión.</p>
+
+            <div class="highlight">
+                <strong>El flujo:</strong>
+                <ul>
+                    <li><strong>0-1 hora:</strong> Email educativo - "Te falta solo un paso. ¿Necesitas ayuda?"</li>
+                    <li><strong>2 horas:</strong> Chatbot WhatsApp - Responde automáticamente: ¿Cuánto cuesta? ¿Qué marcas reparáis? ¿Qué horarios tenéis?</li>
+                    <li><strong>24 horas:</strong> Email final - Calidad del servicio + oferta 15% dto.</li>
+                </ul>
+            </div>
+
+            <h3>2. Evitar No-Show en Reservas</h3>
+            <p>La mayoría de "no-show" ocurre porque han encontrado algo más barato o se les olvida. Enfocamos las automatizaciones a una fase más avanzada.</p>
+
+            <div class="highlight">
+                <strong>El flujo:</strong>
+                <ul>
+                    <li><strong>48h antes:</strong> Email personalizado con análisis IA del vehículo</li>
+                    <li><strong>24h antes:</strong> SMS recordatorio + link para confirmar</li>
+                    <li><strong>6h antes:</strong> SMS cercano + Agente Voz IA (opcional)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 3: CRM HUBSPOT -->
+    <section class="section" id="crm" data-section="crm">
+        <div class="container">
+            <h2>Configuración CRM en HubSpot</h2>
+
+            <p>Las patas principales de una cuenta de HubSpot para Carglass: Automatizaciones, Negocios, Contactos, Empresas, Segmentos y Reporting.</p>
+
+            <div class="card-grid">
+                <div class="card">
+                    <h3>Contactos</h3>
+                    <ul>
+                        <li>Nombre, email, teléfono</li>
+                        <li>Vehículo (marca/modelo/año)</li>
+                        <li>Segmento cliente</li>
+                        <li>Canal preferido</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Deal (Reserva/Servicio)</h3>
+                    <ul>
+                        <li>Flujo bien definido</li>
+                        <li>Reserva fijada → confirmada → asistencia</li>
+                        <li>Control de tiempo en cada etapa</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Segmentaciones</h3>
+                    <ul>
+                        <li>Nuevos (más probabilidad de no-show)</li>
+                        <li>Recurrentes (riesgo de competencia)</li>
+                        <li>Por tipo de reparación</li>
+                        <li>Por modelo del vehículo</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Workflows Automáticos</h3>
+            <ul>
+                <li>Anti-abandono (chatbot WhatsApp)</li>
+                <li>Pre-service journey (48h, 24h, 6h)</li>
+                <li>Post-service feedback</li>
+                <li>Comunicaciones según estaciones/condiciones climáticas</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 4: HERRAMIENTAS IA -->
+    <section class="section" id="ia" data-section="ia">
+        <div class="container">
+            <h2>Herramientas IA que Propongo</h2>
+
+            <div class="card-grid">
+                <div class="card">
+                    <h3>1. Chatbot WhatsApp</h3>
+                    <p>Conversacional que entiende:</p>
+                    <ul>
+                        <li>Preguntas en lenguaje natural</li>
+                        <li>Contexto del usuario</li>
+                        <li>Integración con HubSpot</li>
+                    </ul>
+                    <p><strong>Proveedor:</strong> Twilio + OpenAI API</p>
+                </div>
+
+                <div class="card">
+                    <h3>2. Agente de Voz IA</h3>
+                    <p>Llamada automática que:</p>
+                    <ul>
+                        <li>Confirma asistencia</li>
+                        <li>Ofrece cambio de hora</li>
+                        <li>Voz suena natural</li>
+                    </ul>
+                    <p><strong>Proveedor:</strong> Twilio + Google Text-to-Speech</p>
+                </div>
+
+                <div class="card">
+                    <h3>3. Recomendación Dinámica VAPS</h3>
+                    <p>Email 48h antes con IA que:</p>
+                    <ul>
+                        <li>Analiza vehículo del cliente</li>
+                        <li>Revisa historial de compras</li>
+                        <li>Sugiere servicios relevantes</li>
+                    </ul>
+                    <p><strong>Proveedor:</strong> HubSpot + N8N + GPT API</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 5: RESULTADOS -->
+    <section class="section" id="resultados" data-section="resultados">
+        <div class="container">
+            <h2>3 Iniciativas Prioritarias - Q1</h2>
+
+            <div class="card-grid">
+                <div class="card">
+                    <h3>1. Recuperación de Abandono</h3>
+                    <p><strong>Máxima prioridad</strong></p>
+                    <p>La tasa de abandono es muy elevada = pérdida directa de ingresos.</p>
+                    <p><strong>Métrica:</strong> Abandonment Recovery Rate</p>
+                    <p><strong>Herramientas:</strong> Call Center + Chatbot WhatsApp + Email</p>
+                </div>
+
+                <div class="card">
+                    <h3>2. Confirmación y Recordatorio</h3>
+                    <p><strong>Alta prioridad</strong></p>
+                    <p>18% no-show = ineficiencia de reservas. Técnicos esperando, slots vacíos.</p>
+                    <p><strong>Objetivo:</strong> Reducir a 10%</p>
+                    <p><strong>Métrica:</strong> No-show Rate, Confirmación Rate</p>
+                </div>
+
+                <div class="card">
+                    <h3>3. NPS Post-Servicio</h3>
+                    <p><strong>Media-Alta</strong></p>
+                    <p>Feedback honesto y humano. ¿Quién está satisfecho? ¿Quién se va a otra marca?</p>
+                    <p><strong>Impacto:</strong> Identificar detractores, impulsar referencias</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Pablo García Verdú | Experto en HubSpot & Customer Journey</p>
+        <p>Caso Práctico: CARGLASS - Transformación Digital</p>
+    </footer>
+</div>
+
+<script>
+function startCaseStudy() {
+    document.getElementById('landingPage').style.display = 'none';
+    document.getElementById('caseStudyPage').style.display = 'block';
+    showSection('hero');
+}
+
+function showSection(sectionId) {
+    // Hide all sections
+    const sections = document.querySelectorAll('.section');
+    sections.forEach(section => section.classList.remove('active'));
+
+    // Remove active from all nav links
+    const navLinks = document.querySelectorAll('.section-link');
+    navLinks.forEach(link => link.classList.remove('active'));
+
+    // Show selected section
+    const selectedSection = document.getElementById(sectionId);
+    if (selectedSection) {
+        selectedSection.classList.add('active');
+    }
+
+    // Add active to nav link
+    const activeLink = document.querySelector(`[data-section="${sectionId}"]`);
+    if (activeLink) {
+        activeLink.classList.add('active');
+    }
+
+    // Scroll to top
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>
