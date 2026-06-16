@@ -1081,6 +1081,66 @@ body {
 }
 
 /* ========================================
+   AUTOMATION FULL
+   ======================================== */
+
+.automation-full {
+    background: white;
+    padding: 0;
+}
+
+.automation-full h3 {
+    color: var(--primary-color);
+    font-size: 18px;
+    margin: 30px 0 15px;
+    font-weight: 600;
+}
+
+.automation-full h4 {
+    color: var(--primary-color);
+    font-size: 16px;
+    margin: 20px 0 15px;
+    font-weight: 600;
+}
+
+.automation-full h5 {
+    color: #333;
+    font-size: 14px;
+    margin: 20px 0 10px;
+    font-weight: 600;
+}
+
+.automation-full p {
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+/* ========================================
+   INICIATIVA DETALLE
+   ======================================== */
+
+.iniciativa-detalle {
+    background: white;
+    padding: 0;
+}
+
+.iniciativa-detalle h3 {
+    color: var(--primary-color);
+    font-size: 18px;
+    margin: 30px 0 15px;
+    font-weight: 600;
+}
+
+.iniciativa-detalle p {
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+/* ========================================
    RESPONSIVE DESIGN
    ======================================== */
 

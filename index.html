@@ -48,43 +48,25 @@
     <!-- Sección Lifecycle Resumido -->
     <section class="context-section">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 50px; color: var(--primary-color); font-size: 32px;">Lifecycle del Cliente</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
-                <div class="lifecycle-item">
-                    <div class="lifecycle-number">1</div>
-                    <h4>Awareness</h4>
-                    <p>Cliente tiene la luna rota, decide Carglass por reconocimiento o recomendación</p>
-                </div>
-                <div class="lifecycle-item">
-                    <div class="lifecycle-number">2</div>
-                    <h4>Consideration</h4>
-                    <p>Visita la página de Carglass para pedir una cita</p>
-                </div>
-                <div class="lifecycle-item">
-                    <div class="lifecycle-number">3</div>
-                    <h4>Reserva de Cita</h4>
-                    <p>Inicia reserva a través del formulario web o llamada al taller</p>
-                </div>
-                <div class="lifecycle-item">
-                    <div class="lifecycle-number">4</div>
-                    <h4>Periodo de Espera</h4>
-                    <p><strong>AQUÍ ES DONDE SE CAEN DEL JOURNEY</strong></p>
-                </div>
-                <div class="lifecycle-item">
-                    <div class="lifecycle-number">5</div>
-                    <h4>Cambio de Luna</h4>
-                    <p>Se realiza el trabajo acordado</p>
-                </div>
-                <div class="lifecycle-item">
-                    <div class="lifecycle-number">6</div>
-                    <h4>Post-Venta</h4>
-                    <p>Encuesta para valoración de servicio</p>
-                </div>
-                <div class="lifecycle-item">
-                    <div class="lifecycle-number">7</div>
-                    <h4>Loyalty</h4>
-                    <p>Referencia, repite y compra productos complementarios</p>
-                </div>
+            <h2 style="text-align: center; margin-bottom: 50px; color: var(--primary-color); font-size: 32px;">LIFECYCLE RESUMIDO:</h2>
+            <div style="background: white; padding: 40px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                <p style="margin-bottom: 15px; line-height: 1.8; color: #333; font-size: 15px;">1. <strong>Awareness:</strong> El cliente tiene la luna rota, decide que la mejor opción por reconocimiento o recomendación es Carglass.</p>
+
+                <p style="margin-bottom: 15px; line-height: 1.8; color: #333; font-size: 15px;">2. <strong>Consideration:</strong> Visita la página de Carglass para poder pedir una cita.</p>
+
+                <p style="margin-bottom: 15px; line-height: 1.8; color: #333; font-size: 15px;">3. <strong>Reserva de cita:</strong> Inicia reserva a través del formulario web o llamada al taller más cercano.</p>
+
+                <p style="margin-bottom: 15px; line-height: 1.8; color: #333; font-size: 15px;">4. <strong>Periodo de espera:</strong> Una vez reservado espera varios días hasta que acude a la cita. <strong>(AQUÍ ES DONDE SE CAEN DEL JOURNEY)</strong></p>
+
+                <p style="margin-bottom: 15px; line-height: 1.8; color: #333; font-size: 15px;">5. <strong>Cambio de la luna:</strong> Se le realiza el trabajo acordado.</p>
+
+                <p style="margin-bottom: 15px; line-height: 1.8; color: #333; font-size: 15px;">6. <strong>Servicio post-venta:</strong> Envío de encuesta para valoración de servicio</p>
+
+                <p style="margin-bottom: 0; line-height: 1.8; color: #333; font-size: 15px;">7. <strong>Loyalty:</strong> Referencia, repite y compra productos complementarios.</p>
+            </div>
+
+            <div style="background: #f0f0f0; padding: 30px; border-radius: 12px; margin-top: 30px;">
+                <p style="margin: 0; color: #666; line-height: 1.8; font-size: 14px;">Partiendo de esta situación hipotética, hay que tener en cuenta que cada etapa supone una automatización distinta, el cliente está en un punto de la relación con nosotros distinto. Por lo que el enfoque del mensaje y el objetivo variará…</p>
             </div>
         </div>
     </section>
@@ -92,170 +74,222 @@
     <!-- Sección Automatizaciones -->
     <section id="desafio" class="desafio-section">
         <div class="container">
-            <h2>Automatizaciones Prioritarias</h2>
-            <p style="text-align: center; font-size: 16px; color: #666; margin-bottom: 50px;">Cada etapa requiere una automatización distinta, el cliente está en un punto de la relación diferente</p>
+            <h2 style="text-align: center; margin-bottom: 40px;">¿Qué automatizaciones considero prioritarias para un flujo ideal?</h2>
 
-            <div class="desafio-grid">
-                <div class="desafio-item automation-clickable" onclick="toggleAutomation(1)">
-                    <div class="icon-circle">1</div>
-                    <h3>Recuperar "Carrito Abandonado"</h3>
-                    <p>Cuando el cliente inicia el proceso de reserva pero no lo completa</p>
-                    <small style="color: #007bff; margin-top: 10px;">Haz clic para ver el flujo completo →</small>
-                </div>
+            <div class="automation-full">
+                <h3 style="color: var(--primary-color); font-size: 22px; margin: 40px 0 20px; border-bottom: 3px solid var(--primary-color); padding-bottom: 15px;">AUTOMATIZACIÓN 1: Recuperar "carrito abandonado".</h3>
 
-                <div class="desafio-item automation-clickable" onclick="toggleAutomation(2)">
-                    <div class="icon-circle">2</div>
-                    <h3>Evitar el % de No-show</h3>
-                    <p>18% de las reservas son no-show. Estrategia de confirmación y recordatorio</p>
-                    <small style="color: #007bff; margin-top: 10px;">Haz clic para ver el flujo completo →</small>
-                </div>
+                <p style="margin-bottom: 20px; line-height: 1.8; color: #333;">Cuando alguien que ya tenemos en nuestra bbdd con comunicación por whatsapp, correo o ambas. Entra en web, empieza el proceso de reserva de una cita pero no llega a hacerlo generarle un flujo dependiendo del punto donde se ha perdido la conversión.</p>
 
-                <div class="desafio-item automation-clickable" onclick="toggleAutomation(3)">
-                    <div class="icon-circle">3</div>
-                    <h3>NPS Post-Servicio</h3>
-                    <p>Cierre de círculo: Feedback y evaluación después de la reparación</p>
-                    <small style="color: #007bff; margin-top: 10px;">Haz clic para ver el flujo completo →</small>
-                </div>
+                <h4 style="color: var(--primary-color); margin-top: 30px; margin-bottom: 15px; font-size: 16px;">El flujo:</h4>
+
+                <p style="margin-bottom: 15px; line-height: 1.8; color: #333;">- De 0-1 hora : Email educativo. "Te falta solo un paso. ¿Necesitas ayuda?" Tono amable, sin presión. Personalizado según el punto del formulario de reserva se quedó.</p>
+
+                <p style="margin-bottom: 15px; line-height: 1.8; color: #333;">- A las 2 horas: Chatbot WhatsApp. Aquí el chatbot NO trata de vender, mas bien pregunta "¿Qué necesitas saber?" y responde automáticamente, como por ejemplo:</p>
+
+                <p style="margin-bottom: 8px; line-height: 1.8; color: #333; margin-left: 20px;">- ¿Cuánto cuesta? El sistema le responde inmediatamente con tablas de precios</p>
+
+                <p style="margin-bottom: 8px; line-height: 1.8; color: #333; margin-left: 20px;">- ¿Qué marcas reparáis? Se le muestra el listado completo de marcas que trabaja Carglass</p>
+
+                <p style="margin-bottom: 15px; line-height: 1.8; color: #333; margin-left: 20px;">- ¿Qué horarios tenéis? Muestra la disponibilidad de los talleres según Código Postal.</p>
+
+                <p style="margin-bottom: 15px; line-height: 1.8; color: #333;">Su objetivo es volver a llevarlo al flujo de reserva de web</p>
+
+                <p style="margin-bottom: 15px; line-height: 1.8; color: #333;">- Tras 24 horas: Email final que muestre la calidad del servicio y materiales de Carglass + oferta 15% dto.</p>
+
+                <h4 style="color: var(--primary-color); margin-top: 30px; margin-bottom: 15px; font-size: 16px;">Aspectos a tener en cuenta:</h4>
+
+                <p style="margin-bottom: 15px; line-height: 1.8; color: #333;">1. Cada automatización ocurre cuando la anterior no ha logrado reconvertir al prospecto.</p>
+
+                <p style="margin-bottom: 15px; line-height: 1.8; color: #333;">2. Importante hacer una segmentación en esta automation: ¿Dónde abandonó? ¿En contacto? ¿Matricula? ¿Fecha? Cada uno recibe un mensaje diferente. Un abandono en "fecha" no necesita volver a explicar qué es Carglass. Necesita solo saber que puede venir en horario que mejor le encaja (según disponibilidad). Pudiendo llegar a recuperar un 15% ,20% del abandono.</p>
+
+                <h3 style="color: var(--primary-color); font-size: 22px; margin: 40px 0 20px; border-bottom: 3px solid var(--primary-color); padding-bottom: 15px;">AUTOMATIZACIÓN 2: Evitar el % de No-show en las reservas</h3>
+
+                <p style="margin-bottom: 20px; line-height: 1.8; color: #333;">La mayoría de "no-show" puede ocurrir porque han encontrado algo más barato o porque se les olvida. Aquí la estrategia es diferente, habría que enfocar las automatizaciones a una fase más avanzada.</p>
+
+                <h4 style="color: var(--primary-color); margin-top: 30px; margin-bottom: 15px; font-size: 16px;">El flujo:</h4>
+
+                <h5 style="color: #333; margin: 20px 0 10px; font-weight: 600;">48 horas antes:</h5>
+
+                <p style="margin-bottom: 15px; line-height: 1.8; color: #333;">Se enviará un email personalizado que vaya más allá del nombre o el modelo. Algo como: "Tienes un Audi A4, así que deberías revisar las escobillas y hacer un tratamiento antilluvia pronto".</p>
+
+                <p style="margin-bottom: 15px; line-height: 1.8; color: #333;">Para esto haremos uso de Chat GPT, BBDD interna y N8N. Así, cuando un cliente entra en el sistema con su modelo de coche, N8N analiza los productos por categoria y stock según taller y la API de GPT analiza el vehículo (tipo, antigüedad, etc.) y esta info de la bbdd interna, rellena automáticamente una propiedad en HubSpot llamada "Recomendación IA".</p>
+
+                <p style="margin-bottom: 15px; line-height: 1.8; color: #333;">Ejemplo: Un cliente tiene un Audi A4 de hace 5 años → la IA acude a la bbdd, según esa antigüedad, el stock en zona y esa categoría de coche le sugiere revisar escobillas o tratamiento antilluvia, y eso aparece personalizado en el email/chatbot</p>
+
+                <p style="margin-bottom: 15px; line-height: 1.8; color: #333;">Al final todo tipo de dato que recibamos del vehículo y del perfil del cliente con la IA se puede analizar, sacar provecho de esta y generar ventas cruzadas personalizadas y con sentido.</p>
+
+                <h5 style="color: #333; margin: 20px 0 10px; font-weight: 600;">24 horas antes:</h5>
+
+                <p style="margin-bottom: 15px; line-height: 1.8; color: #333;">- Envío de un SMS recordatorio + link para confirmar. "¿Confirmas tu cita mañana a las 10:00?". Que le lleve a una landing page muy sencilla con la hora, día, ubicación y un botón de confirmación, cancelar o reprogramar.</p>
+
+                <h5 style="color: #333; margin: 20px 0 10px; font-weight: 600;">6 horas antes (aquí entra el segundo agente IA):</h5>
+
+                <p style="margin-bottom: 15px; line-height: 1.8; color: #333;">- Envío de SMS con tono cercano y a modo de recordatorio "Pablo nos vemos a las 12:30 en Avd Marina 312-314"</p>
+
+                <p style="margin-bottom: 15px; line-height: 1.8; color: #333;">- Opcional: Agente de voz IA que llama 90 minutos antes si aún no ha confirmado. No es una llamada grabada. Es un agente que puede:</p>
+
+                <p style="margin-bottom: 8px; line-height: 1.8; color: #333; margin-left: 20px;">- Confirmar que va a ir.</p>
+
+                <p style="margin-bottom: 8px; line-height: 1.8; color: #333; margin-left: 20px;">- Cancela visita al taller.</p>
+
+                <p style="margin-bottom: 8px; line-height: 1.8; color: #333; margin-left: 20px;">- Reprograma visita al taller.</p>
+
+                <p style="margin-bottom: 15px; line-height: 1.8; color: #333; margin-left: 20px;">- La voz suena natural, se podría llegar a clonar a un humano real, sorprende el resultado.</p>
+
+                <p style="margin-bottom: 15px; line-height: 1.8; color: #333;">Con estas automatizaciones apoyadas de inteligencia artificial, permiten personalizar y asegurar que el proceso de confirmación se haga correctamente y en su debido momento. El cliente se siente acompañado, no acosado.</p>
+
+                <h3 style="color: var(--primary-color); font-size: 22px; margin: 40px 0 20px; border-bottom: 3px solid var(--primary-color); padding-bottom: 15px;">A TENER EN CUENTA:</h3>
+
+                <p style="margin-bottom: 15px; line-height: 1.8; color: #333;">Tan importante es, tener bien definido un flujo de reservas y recordatorios a los clientes como evaluar el trabajo que le hemos ofrecido al cliente.</p>
+
+                <p style="margin-bottom: 15px; line-height: 1.8; color: #333;">Por ello, lo ideal es que una vez en nuestro sistema de HubSpot detecte que el mecánico le ha hecho el trabajo y está todo ya firmado y pagado por el cliente, debemos de cerrar el círculo con:</p>
+
+                <p style="margin-bottom: 15px; line-height: 1.8; color: #333;">- 30 minutos después: Envió de email de agradecimiento por confiar en servicio Carglass, dejar los datos del taller por si llega a ocurrir algún fallo y un botón bien claro para dejar una puntuación en un formulario NPS.</p>
+
+                <p style="margin-bottom: 15px; line-height: 1.8; color: #333;">- 24h después: Si no lo rellena, hacer una llamada de call center para poder conocer su opinión.</p>
+
+                <p style="margin-bottom: 15px; line-height: 1.8; color: #333;">Desde HubSpot se pueden hacer este tipo de encuestas, de modo que en el área de paneles se pueden construir informes con los que poder ver la evolución de la satisfacción, ratio de respuesta, etc.</p>
             </div>
-
-            <div id="automationDetails" class="automation-details"></div>
         </div>
     </section>
 
     <!-- Sección Configuración CRM HubSpot -->
     <section id="solucion" class="solucion-section">
         <div class="container">
-            <h2>Configuración CRM en HubSpot</h2>
-            <p style="text-align: center; margin-bottom: 50px; color: #666;">Las patas principales de la cuenta HubSpot para CARGLASS</p>
+            <h2>CONFIGURACIÓN CRM EN HUBSPOT (LO OPERATIVO)</h2>
 
-            <div class="soluciones-principales">
-                <div class="solucion-principal">
-                    <div class="solucion-header">
-                        <i class="fas fa-users"></i>
-                        <h3>Contactos</h3>
-                    </div>
-                    <ul class="solucion-lista">
-                        <li>Nombre, email, teléfono</li>
-                        <li>Vehículo (marca/modelo/año)</li>
-                        <li>Segmento cliente</li>
-                        <li>Código postal y ciudad</li>
-                        <li>Canal preferido de comunicación</li>
-                    </ul>
-                </div>
+            <p style="line-height: 1.8; color: #333; margin-bottom: 30px;">Las patas principales de una cuenta de HubSpot para Carglass, serían: Automatizaciones, el área de Negocios, los Contactos, las Empresas, los Segmentos y el Reporting</p>
 
-                <div class="solucion-principal">
-                    <div class="solucion-header">
-                        <i class="fas fa-bookmark"></i>
-                        <h3>Deal (Reserva/Servicio)</h3>
-                    </div>
-                    <ul class="solucion-lista">
-                        <li>Flujo: Reserva fijada → Confirmada → Asistencia → No-asistencia</li>
-                        <li>Tipo de servicio y estado</li>
-                        <li>Cantidad a pagar</li>
-                        <li>Productos para cross-selling</li>
-                        <li>Control de tiempo en cada etapa</li>
-                    </ul>
-                </div>
+            <p style="line-height: 1.8; color: #333; margin-bottom: 30px;">(Tickets no, porque según entendí en la última reunión se gestionan por otra plataforma, pero también sería viable y óptimo si queremos tomar mejores decisiones y acertar con las comunicaciones)</p>
 
-                <div class="solucion-principal">
-                    <div class="solucion-header">
-                        <i class="fas fa-filter"></i>
-                        <h3>Segmentaciones</h3>
-                    </div>
-                    <ul class="solucion-lista">
-                        <li><strong>Nuevos:</strong> Más no-show, emails detallados</li>
-                        <li><strong>Recurrentes:</strong> Riesgo competencia, ofrecer descuentos</li>
-                        <li><strong>Reparación pequeña:</strong> Alertas con descuentos temporales</li>
-                        <li><strong>Reparación grande:</strong> Info técnica y presencia de descuento</li>
-                        <li><strong>Por modelo de vehículo:</strong> Según nivel adquisitivo</li>
-                    </ul>
-                </div>
+            <h3 style="color: var(--primary-color); font-size: 20px; margin: 40px 0 20px; border-bottom: 2px solid var(--primary-color); padding-bottom: 10px;">Contactos</h3>
 
-                <div class="solucion-principal">
-                    <div class="solucion-header">
-                        <i class="fas fa-chart-bar"></i>
-                        <h3>Reporting</h3>
-                    </div>
-                    <ul class="solucion-lista">
-                        <li>Funnel de conversión</li>
-                        <li>No-show rate por segmento</li>
-                        <li>VAPS rate (Ventas adicionales)</li>
-                        <li>Tiempo promedio reserva-servicio</li>
-                        <li>Tiempos de espera por zonas</li>
-                    </ul>
-                </div>
-            </div>
+            <p style="line-height: 1.8; color: #333; margin-bottom: 20px;">- Nombre, email, teléfono, vehículo (marca/modelo/año), segmento cliente, código postal, ciudad, canal preferido de comunicación.</p>
+
+            <h3 style="color: var(--primary-color); font-size: 20px; margin: 40px 0 20px; border-bottom: 2px solid var(--primary-color); padding-bottom: 10px;">Deal (la reserva/servicio)</h3>
+
+            <p style="line-height: 1.8; color: #333; margin-bottom: 20px;">- Aquí me imagino un flujo de bien definido, donde la primera columna sería Reserva fijada → Reserva confirmada → Asistencia al taller → No asistencia al taller → Reserva cancelada.</p>
+
+            <p style="line-height: 1.8; color: #333; margin-bottom: 20px;">Dentro del deal, introducir toda la información relevante del cliente, como: Tipo de servicio, estado de reserva (reservado → confirmado → cambiada → cancelado), estado del servicio (pendiente → producto pedido → hecho), cantidad a pagar, día de la cita, productos para crosseling con su precio, control tiempo que lleva en cada etapa.</p>
+
+            <p style="line-height: 1.8; color: #333; margin-bottom: 20px;">Aquí es cuestión de entender el negocio y ver qué datos nos sirven para tomar mejores decisiones. Además de crearnos vistas para poder filtrar rapido por categoría de interes, los filtros son clave.</p>
+
+            <h3 style="color: var(--primary-color); font-size: 20px; margin: 40px 0 20px; border-bottom: 2px solid var(--primary-color); padding-bottom: 10px;">Segmentaciones que tendría en cuenta:</h3>
+
+            <p style="line-height: 1.8; color: #333; margin-bottom: 15px;"><strong>Nuevos:</strong> Más probabilidad de no-show (no conocen el proceso, taller o servicio)</p>
+            <p style="line-height: 1.8; color: #333; margin-bottom: 20px; margin-left: 20px;">Estrategia: Email más detallado, recordatorios más "agresivos".</p>
+
+            <p style="line-height: 1.8; color: #333; margin-bottom: 15px;"><strong>Recurrentes:</strong> Menos no-show, pero riesgo de ir a competencia</p>
+            <p style="line-height: 1.8; color: #333; margin-bottom: 20px; margin-left: 20px;">Estrategia: Ofrecer descuentos, tratamientos adicionales (antilluvia, etc.)</p>
+
+            <p style="line-height: 1.8; color: #333; margin-bottom: 15px;"><strong>Reparación pequeña:</strong> Estas suelen ser rápidas, con una urgencia baja y pueden tener una alta cancelación</p>
+            <p style="line-height: 1.8; color: #333; margin-bottom: 20px; margin-left: 20px;">Estrategia: Generar alerta con descuentos temporales solo si asisten a esa cita.</p>
+
+            <p style="line-height: 1.8; color: #333; margin-bottom: 15px;"><strong>Reparación grande:</strong> Supone más gasto para el cliente, estará comprometido</p>
+            <p style="line-height: 1.8; color: #333; margin-bottom: 20px; margin-left: 20px;">Estrategia: Información técnica, detalles desglosados del proceso. Presencia de descuento, al ser un ticket alto un descuento lo valoran más fuerte.</p>
+
+            <p style="line-height: 1.8; color: #333; margin-bottom: 15px;"><strong>Según el modelo del vehículo:</strong> Dependiendo del coche tienen más nivel adquisitivo, y debe de haber una relación directa. Mi hipótesis es que cuanto más alto sea el valor del coche menos no-show y a menor valor del coche mayor será el no-show.</p>
+            <p style="line-height: 1.8; color: #333; margin-bottom: 20px; margin-left: 20px;">Estrategia: Al que tenga un coche de menor gama, incentivar con descuentos o regalo de productos baratos pero que le aporten un valor añadido para venir con Carglass (lo mismo pasaría con la antigüedad del coche, más antiguo supone que tiene menos capacidad económica y al revés con los vehículos más nuevos.)</p>
+
+            <h3 style="color: var(--primary-color); font-size: 20px; margin: 40px 0 20px; border-bottom: 2px solid var(--primary-color); padding-bottom: 10px;">Workflows automáticos</h3>
+
+            <p style="line-height: 1.8; color: #333; margin-bottom: 15px;">- Anti-abandono (chatbot WhatsApp)</p>
+            <p style="line-height: 1.8; color: #333; margin-bottom: 15px;">- Pre-service journey (48h, 24h, 6h, agente voz horas antes si no ha reservado).</p>
+            <p style="line-height: 1.8; color: #333; margin-bottom: 15px;">- Post-service feedback.</p>
+            <p style="line-height: 1.8; color: #333; margin-bottom: 20px;">- Programar un flujo de comunicaciones a lo largo del año, según condiciones climáticas, estaciones, etc.</p>
+
+            <h3 style="color: var(--primary-color); font-size: 20px; margin: 40px 0 20px; border-bottom: 2px solid var(--primary-color); padding-bottom: 10px;">Reporting</h3>
+
+            <p style="line-height: 1.8; color: #333; margin-bottom: 15px;">- Funnel de conversión.</p>
+            <p style="line-height: 1.8; color: #333; margin-bottom: 15px;">- No-show rate por segmento.</p>
+            <p style="line-height: 1.8; color: #333; margin-bottom: 15px;">- VAPS rate.</p>
+            <p style="line-height: 1.8; color: #333; margin-bottom: 15px;">- Tiempo promedio desde reserva hasta servicio.</p>
+            <p style="line-height: 1.8; color: #333; margin-bottom: 20px;">- Tiempos de espera desde que reserva hasta que se lo reaparan, por zonas de españa.</p>
         </div>
     </section>
 
     <!-- Sección Herramientas IA -->
     <section id="journey" class="journey-section">
         <div class="container">
-            <h2>Herramientas IA Propuestas</h2>
-            <p class="section-subtitle">Inteligencia artificial integrada en el customer journey</p>
+            <h2>HERRAMIENTAS IA QUE PROPONGO</h2>
 
-            <div class="ia-tools-grid">
-                <div class="ia-tool-card" onclick="toggleIATool(1)">
-                    <div class="tool-number">1</div>
-                    <h3>Chatbot WhatsApp</h3>
-                    <p>Conversacional, entiende contexto del usuario</p>
-                    <small style="color: #ffd700;">Automático en 60 minutos</small>
-                    <div class="tool-icon"><i class="fas fa-comments"></i></div>
-                </div>
+            <h3 style="color: white; font-size: 20px; margin: 40px 0 20px; border-bottom: 2px solid rgba(255,255,255,0.3); padding-bottom: 10px;">1. Chatbot WhatsApp (Automático en 60 minutos)</h3>
 
-                <div class="ia-tool-card" onclick="toggleIATool(2)">
-                    <div class="tool-number">2</div>
-                    <h3>Agente de Voz IA</h3>
-                    <p>Llamada automática con voz natural</p>
-                    <small style="color: #ffd700;">90 minutos antes si no confirmó</small>
-                    <div class="tool-icon"><i class="fas fa-phone"></i></div>
-                </div>
+            <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 15px;">No es un bot de "presiona 1 para reservar". Es un chatbot conversacional que entiende:</p>
 
-                <div class="ia-tool-card" onclick="toggleIATool(3)">
-                    <div class="tool-number">3</div>
-                    <h3>Recomendación Dinámica VAPS</h3>
-                    <p>Análisis IA del vehículo e historial cliente</p>
-                    <small style="color: #ffd700;">48h antes con sugerencias personalizadas</small>
-                    <div class="tool-icon"><i class="fas fa-lightbulb"></i></div>
-                </div>
-            </div>
+            <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 8px; margin-left: 20px;">- Preguntas en lenguaje natural</p>
+            <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 8px; margin-left: 20px;">- Contexto del usuario (si abandonó en "vehículo", sabe que lo importante es elegir marca)</p>
+            <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 15px; margin-left: 20px;">- Integración con HubSpot (busca el contacto, ve su historial, adapta respuestas)</p>
 
-            <div id="iaDetails" class="ia-details"></div>
+            <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 15px;">Responde automáticamente:</p>
+
+            <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 8px; margin-left: 20px;">- Precios</p>
+            <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 8px; margin-left: 20px;">- Horarios disponibles</p>
+            <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 8px; margin-left: 20px;">- Recomendaciones de servicios</p>
+            <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 8px; margin-left: 20px;">- Cambios de cita</p>
+            <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 15px; margin-left: 20px;">- Garantías</p>
+
+            <p style="color: rgba(255,255,255,0.9); line-height: 1.8; margin-bottom: 30px; font-style: italic;">Proveedor: Twilio + OpenAI API</p>
+
+            <h3 style="color: white; font-size: 20px; margin: 40px 0 20px; border-bottom: 2px solid rgba(255,255,255,0.3); padding-bottom: 10px;">2. Agente de Voz IA (Opcional, 90 minutos antes si no confirmó)</h3>
+
+            <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 15px;">Llamada automática (número de Carglass) que:</p>
+
+            <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 8px; margin-left: 20px;">- Confirma que va a ir</p>
+            <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 8px; margin-left: 20px;">- Pregunta si estará en casa (domicilio)</p>
+            <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 8px; margin-left: 20px;">- Ofrece cambio de hora si es necesario</p>
+            <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 15px; margin-left: 20px;">- Contesta preguntas básicas</p>
+
+            <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 15px;">La voz suena humana. No es un mensaje grabado.</p>
+
+            <p style="color: rgba(255,255,255,0.9); line-height: 1.8; margin-bottom: 30px; font-style: italic;">Proveedor: Twilio + Google Text-to-Speech o Verbo.ai o DAPTA</p>
+
+            <h3 style="color: white; font-size: 20px; margin: 40px 0 20px; border-bottom: 2px solid rgba(255,255,255,0.3); padding-bottom: 10px;">4. Recomendación Dinámica de VAPS</h3>
+
+            <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 15px;">Email de 48h antes con recomendación IA:</p>
+
+            <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 8px; margin-left: 20px;">- Analiza vehículo del cliente (año, marca, modelo)</p>
+            <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 8px; margin-left: 20px;">- Analiza historial (última vez que compró VAPS, qué compró)</p>
+            <p style="color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 15px; margin-left: 20px;">- Sugiere servicios relevantes con probabilidad de compra</p>
+
+            <p style="color: rgba(255,255,255,0.9); line-height: 1.8; margin-bottom: 0; font-style: italic;">Proveedor: HubSpot + N8N + API GPT 5 +</p>
         </div>
     </section>
 
     <!-- Sección de Iniciativas Prioritarias -->
     <section id="resultados" class="resultados-section">
         <div class="container">
-            <h2>3 Iniciativas Prioritarias en 1º Trimestre</h2>
+            <h2>LAS 3 INICIATIVAS QUE PRIORIZARÍA EN 1º TRIMESTRE</h2>
 
-            <div class="resultados-grid">
-                <div class="resultado-card" style="background: linear-gradient(135deg, #ff4444 0%, #cc0000 100%);">
-                    <div class="resultado-number" style="color: #ffeb3b;">1</div>
-                    <h3 style="font-size: 18px; margin: 15px 0;">Recuperación de Abandono</h3>
-                    <p style="font-size: 14px;"><strong>Máxima prioridad</strong></p>
-                    <p style="font-size: 13px; margin: 10px 0;">Tasa de abandono muy elevada = pérdida directa de ingresos</p>
-                    <small>Métrica: Abandonment Recovery Rate</small>
-                    <small style="display: block; margin-top: 10px;">Herramientas: Call Center + Chatbot WhatsApp + Email</small>
-                </div>
+            <div class="iniciativa-detalle">
+                <h3 style="color: var(--primary-color); font-size: 20px; margin: 30px 0 15px;">1. Recuperación de abandono (Máxima prioridad)</h3>
 
-                <div class="resultado-card" style="background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);">
-                    <div class="resultado-number" style="color: #ffeb3b;">2</div>
-                    <h3 style="font-size: 18px; margin: 15px 0;">Confirmación y Recordatorio</h3>
-                    <p style="font-size: 14px;"><strong>Alta prioridad</strong></p>
-                    <p style="font-size: 13px; margin: 10px 0;">18% no-show = ineficiencia de reservas</p>
-                    <small>Métrica: No-show Rate</small>
-                    <small style="display: block; margin-top: 10px;">Herramientas: Call Center + SMS + Agente Voz IA</small>
-                </div>
+                <p style="line-height: 1.8; color: #333; margin-bottom: 10px;">- Por qué: La tasa de abandono es muy elevada = pérdida directa de ingresos. Es dinero en la mesa que estás regalando.</p>
 
-                <div class="resultado-card" style="background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%);">
-                    <div class="resultado-number" style="color: #ffeb3b;">3</div>
-                    <h3 style="font-size: 18px; margin: 15px 0;">NPS Post-Servicio</h3>
-                    <p style="font-size: 14px;"><strong>Media-Alta prioridad</strong></p>
-                    <p style="font-size: 13px; margin: 10px 0;">Feedback honesto para identificar satisfacción</p>
-                    <small>Métrica: NPS, Reactivation Rate</small>
-                    <small style="display: block; margin-top: 10px;">Herramientas: Formulario NPS + Email automático</small>
-                </div>
+                <p style="line-height: 1.8; color: #333; margin-bottom: 10px;">- Métrica: Abandonment Recovery Rate, Cost per Booking Recovered.</p>
+
+                <p style="line-height: 1.8; color: #333; margin-bottom: 20px;">- Herramientas: Call Center confirma cita y resuelve dudas del presupuesto, Chatbot WhatsApp + email secuencial hiper personalizado.</p>
+
+                <h3 style="color: var(--primary-color); font-size: 20px; margin: 30px 0 15px;">2. Confirmación y Recordatorio (Alta prioridad)</h3>
+
+                <p style="line-height: 1.8; color: #333; margin-bottom: 10px;">- Por qué: 18% no-show, es decir, ineficiencia de las reservas. Técnicos esperando, slots de reserva vacíos.</p>
+
+                <p style="line-height: 1.8; color: #333; margin-bottom: 10px;">- Impacto: Reducir a 10%</p>
+
+                <p style="line-height: 1.8; color: #333; margin-bottom: 10px;">- Métrica: No-show Rate, Confirmación Rate.</p>
+
+                <p style="line-height: 1.8; color: #333; margin-bottom: 20px;">- Herramientas: Call Center confirmación, SMS + Agente de voz IA.</p>
+
+                <h3 style="color: var(--primary-color); font-size: 20px; margin: 30px 0 15px;">3. NPS Post-Servicio (Media-Alta)</h3>
+
+                <p style="line-height: 1.8; color: #333; margin-bottom: 10px;">- Por qué: Se necesita feedback honesto y humano. ¿Quién está in/satisfecho? ¿Quién se va a otra marca? ¿Quién te va a recomendar?</p>
+
+                <p style="line-height: 1.8; color: #333; margin-bottom: 10px;">- Impacto: Identificar detractores para reactivar, impulsar referencias, score de clientes.</p>
+
+                <p style="line-height: 1.8; color: #333; margin-bottom: 10px;">- Métrica: NPS, Reactivation Rate.</p>
+
+                <p style="line-height: 1.8; color: #333; margin-bottom: 20px;">- Herramientas: Formulario NPS, correo automático.</p>
             </div>
         </div>
     </section>
@@ -263,128 +297,51 @@
     <!-- Sección A/B Test -->
     <section class="metodologia-section">
         <div class="container">
-            <h2>A/B Test: Por qué ganó la Variante B</h2>
-            <p style="text-align: center; margin-bottom: 50px; color: #666; font-size: 16px;">Decisión basada en datos: Reducción de no-show vs VAPS rate</p>
+            <h2>SOBRE EL A/B TEST: POR QUÉ GANÓ LA VARIANTE B</h2>
 
-            <div class="ab-test-container">
-                <div class="ab-variant">
-                    <h3 style="color: #cc0000; margin-bottom: 20px;">Variante A</h3>
-                    <div class="variant-content">
-                        <p><strong>Estrategia:</strong> 1 email 24h antes</p>
-                        <p style="color: #999; font-style: italic;">Mensaje: "Te esperamos mañana."</p>
+            <h3 style="color: var(--primary-color); font-size: 18px; margin: 30px 0 15px;">Variante A: 1 email 24h antes. "Te esperamos mañana."</h3>
 
-                        <div class="metric-item">
-                            <span class="metric-label">No-show Rate:</span>
-                            <span class="metric-value" style="color: #cc0000;">18%</span>
-                        </div>
-                        <div class="metric-item">
-                            <span class="metric-label">VAPS Rate:</span>
-                            <span class="metric-value" style="color: #ff9800;">16%</span>
-                        </div>
-                    </div>
-                </div>
+            <h3 style="color: var(--primary-color); font-size: 18px; margin: 30px 0 15px;">Variante B: 2 emails (48h + 24h). "Confirma tu asistencia."</h3>
 
-                <div class="vs-separator">vs</div>
+            <h3 style="color: var(--primary-color); font-size: 18px; margin: 30px 0 15px;">Resultados:</h3>
 
-                <div class="ab-variant winner">
-                    <h3 style="color: #4caf50; margin-bottom: 20px;">✓ Variante B <span style="font-size: 14px; color: #ffd700;">(GANADORA)</span></h3>
-                    <div class="variant-content">
-                        <p><strong>Estrategia:</strong> 2 emails (48h + 24h)</p>
-                        <p style="color: #999; font-style: italic;">Mensaje: "Confirma tu asistencia."</p>
+            <p style="line-height: 1.8; color: #333; margin-bottom: 10px;">- No-show A: 18%</p>
+            <p style="line-height: 1.8; color: #333; margin-bottom: 10px;">- No-show B: 6%</p>
+            <p style="line-height: 1.8; color: #333; margin-bottom: 20px;">- Pero VAPS A: 16% vs VAPS B: 8%</p>
 
-                        <div class="metric-item">
-                            <span class="metric-label">No-show Rate:</span>
-                            <span class="metric-value" style="color: #4caf50;">6%</span>
-                        </div>
-                        <div class="metric-item">
-                            <span class="metric-label">VAPS Rate:</span>
-                            <span class="metric-value" style="color: #ff9800;">8%</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <p style="line-height: 1.8; color: #333; margin-bottom: 15px;">Elegiría sin duda el B, porque el no-show es el problema mayor. Perder un cliente que no aparece cuesta más que una venta cruzada complementaria a la cita no realizada. Ejemplo: Cambio de luna= 300€ V.S Escobillas= 30€</p>
 
-            <div style="background: #f0f0f0; padding: 30px; border-radius: 12px; margin-top: 40px;">
-                <h4 style="color: var(--primary-color); margin-bottom: 15px;">Análisis de la decisión:</h4>
-                <p style="margin-bottom: 15px;">Se eligió <strong>Variante B</strong> porque el no-show es el problema mayor. Perder un cliente que no aparece cuesta más que una venta cruzada complementaria.</p>
-                <p><strong>Ejemplo:</strong> Cambio de luna = 300€ vs Escobillas = 30€</p>
-                <p style="margin-top: 15px; font-size: 14px; color: #666;"><em>Estrategia adicional: Usar B para confirmación (reduce no-show). Usar A después de confirmar cita para aumentar VAPS.</em></p>
-            </div>
+            <p style="line-height: 1.8; color: #333; margin-bottom: 0;">Pero también se puede ver como, no me voy a quedar con uno y el otro lo descarto. Hay que separar los flujos. Usaría B para confirmación (porque baja no-show). Y el email A una vez me han confirmado la cita, ya que el VAPS rate es mayor, este se puede enviar unos días antes de la cita o 48h después de confirmarme</p>
         </div>
     </section>
 
-    <!-- Sección Calidad de Datos y Colaboración -->
+    <!-- Sección Colaboración con otros equipos y Calidad de datos -->
     <section class="competencias-section">
         <div class="container">
-            <h2>Aspectos Operacionales Clave</h2>
+            <h2>Colaboración con otros equipos:</h2>
 
-            <div class="operacionales-grid">
-                <div class="operacional-card">
-                    <h3 style="color: var(--primary-color); margin-bottom: 20px;"><i class="fas fa-database"></i> Calidad del Dato</h3>
-                    <ul style="list-style: none;">
-                        <li style="padding: 10px 0; padding-left: 25px; position: relative;">
-                            <span style="position: absolute; left: 0; color: var(--primary-color);">→</span>
-                            Eliminar duplicados (matrícula como ID único)
-                        </li>
-                        <li style="padding: 10px 0; padding-left: 25px; position: relative;">
-                            <span style="position: absolute; left: 0; color: var(--primary-color);">→</span>
-                            Checkboxes de consentimiento bien configurados (GDPR)
-                        </li>
-                        <li style="padding: 10px 0; padding-left: 25px; position: relative;">
-                            <span style="position: absolute; left: 0; color: var(--primary-color);">→</span>
-                            Segmentación de clientes sin consentimiento
-                        </li>
-                        <li style="padding: 10px 0; padding-left: 25px; position: relative;">
-                            <span style="position: absolute; left: 0; color: var(--primary-color);">→</span>
-                            Auditar "marketing user" (evitar sobrecostos)
-                        </li>
-                    </ul>
-                </div>
+            <div style="background: white; padding: 40px; border-radius: 12px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                <p style="line-height: 1.8; color: #333; margin-bottom: 15px;">Para que un CRM tenga verdadero valor y sea útil para el equipo y la dirección, necesita estar lleno de datos que importen. Sin ellos, no hay nada que hacer. Es como construir una casa: sin ladrillos y cemento no puedes hacer un chalet, solo una caseta que no vale la pena.</p>
 
-                <div class="operacional-card">
-                    <h3 style="color: var(--primary-color); margin-bottom: 20px;"><i class="fas fa-users-cog"></i> Colaboración con Equipos</h3>
-                    <p style="margin-bottom: 15px; color: #666; font-size: 14px;">El CRM necesita estar lleno de datos que importen. Sin ellos, no hay nada que hacer.</p>
-                    <ul style="list-style: none;">
-                        <li style="padding: 10px 0; padding-left: 25px; position: relative;">
-                            <span style="position: absolute; left: 0; color: var(--primary-color);">→</span>
-                            IT: Dueño de datos y sistemas
-                        </li>
-                        <li style="padding: 10px 0; padding-left: 25px; position: relative;">
-                            <span style="position: absolute; left: 0; color: var(--primary-color);">→</span>
-                            Creativo: Para mailing y contenido
-                        </li>
-                        <li style="padding: 10px 0; padding-left: 25px; position: relative;">
-                            <span style="position: absolute; left: 0; color: var(--primary-color);">→</span>
-                            Reservas: Generación de leads
-                        </li>
-                        <li style="padding: 10px 0; padding-left: 25px; position: relative;">
-                            <span style="position: absolute; left: 0; color: var(--primary-color);">→</span>
-                            Taller: Información de servicios vendidos
-                        </li>
-                    </ul>
-                </div>
+                <p style="line-height: 1.8; color: #333; margin-bottom: 15px;">Por eso es clave que todos los equipos que toquen el proceso, desde la reserva hasta el cobro, conozcan cómo funciona HubSpot. No tienen que usarlo directamente, pero yo necesito entender qué hacen, dónde están en el flujo y cómo puedo ayudarles yo a ellos con posibles informes y ellos a mí con datos que generan.</p>
 
-                <div class="operacional-card">
-                    <h3 style="color: var(--primary-color); margin-bottom: 20px;"><i class="fas fa-cog"></i> Workflows Automáticos</h3>
-                    <ul style="list-style: none;">
-                        <li style="padding: 10px 0; padding-left: 25px; position: relative;">
-                            <span style="position: absolute; left: 0; color: var(--primary-color);">→</span>
-                            Anti-abandono (Chatbot WhatsApp)
-                        </li>
-                        <li style="padding: 10px 0; padding-left: 25px; position: relative;">
-                            <span style="position: absolute; left: 0; color: var(--primary-color);">→</span>
-                            Pre-service journey (48h, 24h, 6h)
-                        </li>
-                        <li style="padding: 10px 0; padding-left: 25px; position: relative;">
-                            <span style="position: absolute; left: 0; color: var(--primary-color);">→</span>
-                            Post-service feedback y NPS
-                        </li>
-                        <li style="padding: 10px 0; padding-left: 25px; position: relative;">
-                            <span style="position: absolute; left: 0; color: var(--primary-color);">→</span>
-                            Comunicaciones según estaciones/clima
-                        </li>
-                    </ul>
-                </div>
+                <p style="line-height: 1.8; color: #333; margin-bottom: 15px;">Por ejemplo con la post-venta: un cliente reserva cita, entra en HubSpot, generamos todo el journey (recordatorios, SMS, llamadas automáticas), asiste a la cita y se le arregla la luna. Además, el taller le vende unas escobillas, si yo tengo esa información, puedo meterle en un segmento de ventas de escobilla VAPS y no volver a impactarle con el mismo producto hasta dentro de x meses. Es perder balas.</p>
+
+                <p style="line-height: 1.8; color: #333; margin-bottom: 15px;">El detalle es que la información es poder. Quien tenga los datos, controla la estrategia. Para esto debería de estar en contacto con IT, dueño de los datos y sistemas, creativo/a para mailing y encargado de generar los leads de las reservas.</p>
+            </div>
+
+            <h2>Calidad del dato:</h2>
+
+            <div style="background: white; padding: 40px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                <p style="line-height: 1.8; color: #333; margin-bottom: 15px;">Antes de automatizar nada, necesitamos una base de datos limpia. Sin datos de calidad, no funciona.</p>
+
+                <p style="line-height: 1.8; color: #333; margin-bottom: 15px;">Lo básico que hay que revisar: Primero, eliminar duplicados. La matrícula por hipótesis debería de ser el identificador único en todos los objetos.</p>
+
+                <p style="line-height: 1.8; color: #333; margin-bottom: 15px;">Segundo, los formularios. Los checkboxes de consentimiento y política de privacidad tienen que estar bien configurados y llegar a HubSpot con el valor correcto. Si no, incumplimos GDPR y esto puede suponer multa millonaria.</p>
+
+                <p style="line-height: 1.8; color: #333; margin-bottom: 15px;">Tercero, segmentación clara. Crear un segmento en HubSpot para los que no aceptaron comunicaciones y excluirlos de TODAS las automaciones.</p>
+
+                <p style="line-height: 1.8; color: #333; margin-bottom: 0;">Y lo importante: auditar cuántos contactos tienes como "marketing user". Ya que HubSpot cobra por eso, si te pasas del límite, te cobran sin avisar.</p>
             </div>
         </div>
     </section>
