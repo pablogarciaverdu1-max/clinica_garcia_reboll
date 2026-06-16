@@ -402,13 +402,15 @@ body {
 <!-- ========== LANDING PAGE ========== -->
 <div class="landing-page" id="landingPage">
     <div class="landing-content">
+        <div style="margin-bottom: 40px;">
+            <div style="background: linear-gradient(135deg, #d32f2f, #c62828); color: white; padding: 20px; border-radius: 8px; font-size: 32px; font-weight: 900; letter-spacing: 2px; display: inline-block;">CARGLASS</div>
+        </div>
         <h1>Pablo García Verdú</h1>
         <p class="subtitle">Experto en HubSpot & Customer Journey</p>
         <p class="description">
-            Transformo negocios mediante automatización inteligente, estrategias de CRM y optimización del customer journey.
-            Especializado en implementar soluciones que generan resultados medibles.
+            A continuación te presento mi propuesta como CRM manager si mañana mismo entrase en CARGLASS para optimizar flujos y sacar rendimiento a Hubspot.
         </p>
-        <button class="cta-button" onclick="startCaseStudy()">Explorar Caso CARGLASS</button>
+        <button class="cta-button" onclick="startCaseStudy()">Explorar Propuesta</button>
     </div>
 </div>
 
@@ -428,6 +430,7 @@ body {
                 <li><a onclick="goToSection(4)" class="section-link" data-index="4">Calidad Dato</a></li>
                 <li><a onclick="goToSection(5)" class="section-link" data-index="5">1º Trimestre</a></li>
                 <li><a onclick="goToSection(6)" class="section-link" data-index="6">Test A/B</a></li>
+                <li><a onclick="goToSection(7)" class="section-link" data-index="7">Propuesta IA</a></li>
             </ul>
         </div>
     </nav>
@@ -767,7 +770,17 @@ body {
 
             <p>Pero también se puede ver como, no me voy a quedar con uno y el otro lo descarto. Hay que separar los flujos. Usaría B para confirmación (porque baja no-show). Y el email A una vez me han confirmado la cita, ya que el VAPS rate es mayor, este se puede enviar unos días antes de la cita o 48h después de confirmarme</p>
 
-            <h2>PROPUESTA IA:</h2>
+            <div class="nav-buttons">
+                <button class="btn-prev" onclick="prevSection()">← Anterior</button>
+                <button class="btn-next" onclick="nextSection()">Siguiente →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 7: PROPUESTA IA -->
+    <section class="section" data-index="7">
+        <div class="section-content">
+            <h1>PROPUESTA IA</h1>
 
             <h3>1. Chatbot WhatsApp (Automático en 60 minutos)</h3>
 
