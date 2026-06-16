@@ -31,293 +31,359 @@
         <div class="hero-content">
             <div class="hero-text">
                 <h1>CARGLASS</h1>
-                <h2>Transformando el Customer Journey en la Industria de Reparación de Cristales</h2>
-                <p>Análisis estratégico de HubSpot y optimización de procesos de customer experience</p>
+                <h2>Optimización del Customer Journey con HubSpot y Automatización IA</h2>
+                <p>Caso práctico: Recuperación de abandonos, reducción de no-shows y fidelización de clientes</p>
                 <button class="cta-button" onclick="document.getElementById('desafio').scrollIntoView({behavior: 'smooth'})">
-                    Ver caso práctico
+                    Explorar análisis
                 </button>
             </div>
             <div class="hero-image">
                 <div class="hero-icon">
-                    <i class="fas fa-shield-alt"></i>
+                    <i class="fas fa-car"></i>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Sección de Contexto -->
+    <!-- Sección Lifecycle Resumido -->
     <section class="context-section">
         <div class="container">
-            <div class="context-card">
-                <i class="fas fa-building"></i>
-                <h3>Sobre CARGLASS</h3>
-                <p>Líder europeo en reparación y sustitución de cristales para vehículos con presencia en múltiples países.</p>
-            </div>
-            <div class="context-card">
-                <i class="fas fa-target"></i>
-                <h3>Mi Rol</h3>
-                <p>Analista especializado en optimizar el customer journey mediante HubSpot y automatización de procesos.</p>
-            </div>
-            <div class="context-card">
-                <i class="fas fa-chart-line"></i>
-                <h3>Objetivo</h3>
-                <p>Mejorar la retención, satisfacción y rentabilidad del customer lifetime value.</p>
+            <h2 style="text-align: center; margin-bottom: 50px; color: var(--primary-color); font-size: 32px;">Lifecycle del Cliente</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                <div class="lifecycle-item">
+                    <div class="lifecycle-number">1</div>
+                    <h4>Awareness</h4>
+                    <p>Cliente tiene la luna rota, decide Carglass por reconocimiento o recomendación</p>
+                </div>
+                <div class="lifecycle-item">
+                    <div class="lifecycle-number">2</div>
+                    <h4>Consideration</h4>
+                    <p>Visita la página de Carglass para pedir una cita</p>
+                </div>
+                <div class="lifecycle-item">
+                    <div class="lifecycle-number">3</div>
+                    <h4>Reserva de Cita</h4>
+                    <p>Inicia reserva a través del formulario web o llamada al taller</p>
+                </div>
+                <div class="lifecycle-item">
+                    <div class="lifecycle-number">4</div>
+                    <h4>Periodo de Espera</h4>
+                    <p><strong>AQUÍ ES DONDE SE CAEN DEL JOURNEY</strong></p>
+                </div>
+                <div class="lifecycle-item">
+                    <div class="lifecycle-number">5</div>
+                    <h4>Cambio de Luna</h4>
+                    <p>Se realiza el trabajo acordado</p>
+                </div>
+                <div class="lifecycle-item">
+                    <div class="lifecycle-number">6</div>
+                    <h4>Post-Venta</h4>
+                    <p>Encuesta para valoración de servicio</p>
+                </div>
+                <div class="lifecycle-item">
+                    <div class="lifecycle-number">7</div>
+                    <h4>Loyalty</h4>
+                    <p>Referencia, repite y compra productos complementarios</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Sección Desafío -->
+    <!-- Sección Automatizaciones -->
     <section id="desafio" class="desafio-section">
         <div class="container">
-            <h2>El Desafío</h2>
+            <h2>Automatizaciones Prioritarias</h2>
+            <p style="text-align: center; font-size: 16px; color: #666; margin-bottom: 50px;">Cada etapa requiere una automatización distinta, el cliente está en un punto de la relación diferente</p>
+
             <div class="desafio-grid">
-                <div class="desafio-item">
+                <div class="desafio-item automation-clickable" onclick="toggleAutomation(1)">
                     <div class="icon-circle">1</div>
-                    <h3>Fragmentación del Customer Journey</h3>
-                    <p>Los datos estaban dispersos entre múltiples sistemas sin visión unificada del cliente.</p>
+                    <h3>Recuperar "Carrito Abandonado"</h3>
+                    <p>Cuando el cliente inicia el proceso de reserva pero no lo completa</p>
+                    <small style="color: #007bff; margin-top: 10px;">Haz clic para ver el flujo completo →</small>
                 </div>
-                <div class="desafio-item">
+
+                <div class="desafio-item automation-clickable" onclick="toggleAutomation(2)">
                     <div class="icon-circle">2</div>
-                    <h3>Procesos No Automatizados</h3>
-                    <p>Falta de automatización en follow-ups, aumentando costos operacionales y reduciendo conversiones.</p>
+                    <h3>Evitar el % de No-show</h3>
+                    <p>18% de las reservas son no-show. Estrategia de confirmación y recordatorio</p>
+                    <small style="color: #007bff; margin-top: 10px;">Haz clic para ver el flujo completo →</small>
                 </div>
-                <div class="desafio-item">
+
+                <div class="desafio-item automation-clickable" onclick="toggleAutomation(3)">
                     <div class="icon-circle">3</div>
-                    <h3>Baja Retención de Clientes</h3>
-                    <p>Sin estrategia de re-engagement, los clientes no retornaban tras primera compra.</p>
-                </div>
-                <div class="desafio-item">
-                    <div class="icon-circle">4</div>
-                    <h3>Métricas Deficientes</h3>
-                    <p>No existía tracking adecuado de KPIs clave ni análisis predictivo de comportamiento.</p>
+                    <h3>NPS Post-Servicio</h3>
+                    <p>Cierre de círculo: Feedback y evaluación después de la reparación</p>
+                    <small style="color: #007bff; margin-top: 10px;">Haz clic para ver el flujo completo →</small>
                 </div>
             </div>
+
+            <div id="automationDetails" class="automation-details"></div>
         </div>
     </section>
 
-    <!-- Sección Solución -->
+    <!-- Sección Configuración CRM HubSpot -->
     <section id="solucion" class="solucion-section">
         <div class="container">
-            <h2>La Solución Implementada</h2>
+            <h2>Configuración CRM en HubSpot</h2>
+            <p style="text-align: center; margin-bottom: 50px; color: #666;">Las patas principales de la cuenta HubSpot para CARGLASS</p>
 
             <div class="soluciones-principales">
                 <div class="solucion-principal">
                     <div class="solucion-header">
-                        <i class="fas fa-cogs"></i>
-                        <h3>1. Integración HubSpot</h3>
+                        <i class="fas fa-users"></i>
+                        <h3>Contactos</h3>
                     </div>
                     <ul class="solucion-lista">
-                        <li>Centralización de CRM con base de datos unificada</li>
-                        <li>Integración con sistema de citas online</li>
-                        <li>Sincronización automática de datos de clientes</li>
-                        <li>Seguimiento completo del ciclo de venta</li>
+                        <li>Nombre, email, teléfono</li>
+                        <li>Vehículo (marca/modelo/año)</li>
+                        <li>Segmento cliente</li>
+                        <li>Código postal y ciudad</li>
+                        <li>Canal preferido de comunicación</li>
                     </ul>
                 </div>
 
                 <div class="solucion-principal">
                     <div class="solucion-header">
-                        <i class="fas fa-robot"></i>
-                        <h3>2. Automatización de Marketing</h3>
+                        <i class="fas fa-bookmark"></i>
+                        <h3>Deal (Reserva/Servicio)</h3>
                     </div>
                     <ul class="solucion-lista">
-                        <li>Workflows automáticos de lead nurturing</li>
-                        <li>Email sequences personalizadas por segmento</li>
-                        <li>SMS y push notifications en momentos clave</li>
-                        <li>Escalado automático según comportamiento</li>
+                        <li>Flujo: Reserva fijada → Confirmada → Asistencia → No-asistencia</li>
+                        <li>Tipo de servicio y estado</li>
+                        <li>Cantidad a pagar</li>
+                        <li>Productos para cross-selling</li>
+                        <li>Control de tiempo en cada etapa</li>
                     </ul>
                 </div>
 
                 <div class="solucion-principal">
                     <div class="solucion-header">
-                        <i class="fas fa-chart-line"></i>
-                        <h3>3. Optimización del Journey</h3>
+                        <i class="fas fa-filter"></i>
+                        <h3>Segmentaciones</h3>
                     </div>
                     <ul class="solucion-lista">
-                        <li>Mapeo de touchpoints críticos del cliente</li>
-                        <li>Identificación de puntos de fricción</li>
-                        <li>Creación de workflows de re-engagement</li>
-                        <li>Personalización dinámica por comportamiento</li>
+                        <li><strong>Nuevos:</strong> Más no-show, emails detallados</li>
+                        <li><strong>Recurrentes:</strong> Riesgo competencia, ofrecer descuentos</li>
+                        <li><strong>Reparación pequeña:</strong> Alertas con descuentos temporales</li>
+                        <li><strong>Reparación grande:</strong> Info técnica y presencia de descuento</li>
+                        <li><strong>Por modelo de vehículo:</strong> Según nivel adquisitivo</li>
                     </ul>
                 </div>
 
                 <div class="solucion-principal">
                     <div class="solucion-header">
-                        <i class="fas fa-eye"></i>
-                        <h3>4. Dashboards y Analytics</h3>
+                        <i class="fas fa-chart-bar"></i>
+                        <h3>Reporting</h3>
                     </div>
                     <ul class="solucion-lista">
-                        <li>Dashboards en tiempo real con KPIs principales</li>
-                        <li>Reportes de conversión y ROI por canal</li>
-                        <li>Análisis predictivo de churn</li>
-                        <li>Segmentación avanzada de audiencias</li>
+                        <li>Funnel de conversión</li>
+                        <li>No-show rate por segmento</li>
+                        <li>VAPS rate (Ventas adicionales)</li>
+                        <li>Tiempo promedio reserva-servicio</li>
+                        <li>Tiempos de espera por zonas</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Sección Customer Journey Interactiva -->
+    <!-- Sección Herramientas IA -->
     <section id="journey" class="journey-section">
         <div class="container">
-            <h2>Customer Journey Interactivo</h2>
-            <p class="section-subtitle">Haz clic en cada etapa para ver los detalles de la estrategia implementada</p>
+            <h2>Herramientas IA Propuestas</h2>
+            <p class="section-subtitle">Inteligencia artificial integrada en el customer journey</p>
 
-            <div class="journey-container">
-                <div class="journey-stage" onclick="toggleJourneyDetails(this)">
-                    <div class="stage-number">1</div>
-                    <h3>Awareness</h3>
-                    <p>Descubrimiento</p>
-                    <div class="journey-icon"><i class="fas fa-eye"></i></div>
+            <div class="ia-tools-grid">
+                <div class="ia-tool-card" onclick="toggleIATool(1)">
+                    <div class="tool-number">1</div>
+                    <h3>Chatbot WhatsApp</h3>
+                    <p>Conversacional, entiende contexto del usuario</p>
+                    <small style="color: #ffd700;">Automático en 60 minutos</small>
+                    <div class="tool-icon"><i class="fas fa-comments"></i></div>
                 </div>
 
-                <div class="journey-arrow">→</div>
-
-                <div class="journey-stage" onclick="toggleJourneyDetails(this)">
-                    <div class="stage-number">2</div>
-                    <h3>Consideration</h3>
-                    <p>Evaluación</p>
-                    <div class="journey-icon"><i class="fas fa-search"></i></div>
+                <div class="ia-tool-card" onclick="toggleIATool(2)">
+                    <div class="tool-number">2</div>
+                    <h3>Agente de Voz IA</h3>
+                    <p>Llamada automática con voz natural</p>
+                    <small style="color: #ffd700;">90 minutos antes si no confirmó</small>
+                    <div class="tool-icon"><i class="fas fa-phone"></i></div>
                 </div>
 
-                <div class="journey-arrow">→</div>
-
-                <div class="journey-stage" onclick="toggleJourneyDetails(this)">
-                    <div class="stage-number">3</div>
-                    <h3>Decision</h3>
-                    <p>Conversión</p>
-                    <div class="journey-icon"><i class="fas fa-check"></i></div>
-                </div>
-
-                <div class="journey-arrow">→</div>
-
-                <div class="journey-stage" onclick="toggleJourneyDetails(this)">
-                    <div class="stage-number">4</div>
-                    <h3>Retention</h3>
-                    <p>Fidelización</p>
-                    <div class="journey-icon"><i class="fas fa-heart"></i></div>
+                <div class="ia-tool-card" onclick="toggleIATool(3)">
+                    <div class="tool-number">3</div>
+                    <h3>Recomendación Dinámica VAPS</h3>
+                    <p>Análisis IA del vehículo e historial cliente</p>
+                    <small style="color: #ffd700;">48h antes con sugerencias personalizadas</small>
+                    <div class="tool-icon"><i class="fas fa-lightbulb"></i></div>
                 </div>
             </div>
 
-            <div id="journeyDetails" class="journey-details">
-                <!-- Detalles se cargan dinámicamente con JavaScript -->
-            </div>
+            <div id="iaDetails" class="ia-details"></div>
         </div>
     </section>
 
-    <!-- Sección de Resultados -->
+    <!-- Sección de Iniciativas Prioritarias -->
     <section id="resultados" class="resultados-section">
         <div class="container">
-            <h2>Resultados Conseguidos</h2>
+            <h2>3 Iniciativas Prioritarias en 1º Trimestre</h2>
 
             <div class="resultados-grid">
-                <div class="resultado-card">
-                    <div class="resultado-number">+45%</div>
-                    <p>Aumento en tasa de conversión</p>
-                    <small>Primeros 6 meses post-implementación</small>
+                <div class="resultado-card" style="background: linear-gradient(135deg, #ff4444 0%, #cc0000 100%);">
+                    <div class="resultado-number" style="color: #ffeb3b;">1</div>
+                    <h3 style="font-size: 18px; margin: 15px 0;">Recuperación de Abandono</h3>
+                    <p style="font-size: 14px;"><strong>Máxima prioridad</strong></p>
+                    <p style="font-size: 13px; margin: 10px 0;">Tasa de abandono muy elevada = pérdida directa de ingresos</p>
+                    <small>Métrica: Abandonment Recovery Rate</small>
+                    <small style="display: block; margin-top: 10px;">Herramientas: Call Center + Chatbot WhatsApp + Email</small>
                 </div>
 
-                <div class="resultado-card">
-                    <div class="resultado-number">+120%</div>
-                    <p>Incremento en customer lifetime value</p>
-                    <small>Retención mejorada y upsell automático</small>
+                <div class="resultado-card" style="background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);">
+                    <div class="resultado-number" style="color: #ffeb3b;">2</div>
+                    <h3 style="font-size: 18px; margin: 15px 0;">Confirmación y Recordatorio</h3>
+                    <p style="font-size: 14px;"><strong>Alta prioridad</strong></p>
+                    <p style="font-size: 13px; margin: 10px 0;">18% no-show = ineficiencia de reservas</p>
+                    <small>Métrica: No-show Rate</small>
+                    <small style="display: block; margin-top: 10px;">Herramientas: Call Center + SMS + Agente Voz IA</small>
                 </div>
 
-                <div class="resultado-card">
-                    <div class="resultado-number">-35%</div>
-                    <p>Reducción en costo de adquisición</p>
-                    <small>Automatización de seguimiento</small>
-                </div>
-
-                <div class="resultado-card">
-                    <div class="resultado-number">+89%</div>
-                    <p>Mayor engagement de clientes</p>
-                    <small>Con mensajes personalizados y automáticos</small>
-                </div>
-
-                <div class="resultado-card">
-                    <div class="resultado-number">+200%</div>
-                    <p>Aumento de leads re-engaged</p>
-                    <small>Mediante workflows de automation</small>
-                </div>
-
-                <div class="resultado-card">
-                    <div class="resultado-number">24/7</div>
-                    <p>Atención al cliente automática</p>
-                    <small>Chatbots y workflows sin intervención</small>
+                <div class="resultado-card" style="background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%);">
+                    <div class="resultado-number" style="color: #ffeb3b;">3</div>
+                    <h3 style="font-size: 18px; margin: 15px 0;">NPS Post-Servicio</h3>
+                    <p style="font-size: 14px;"><strong>Media-Alta prioridad</strong></p>
+                    <p style="font-size: 13px; margin: 10px 0;">Feedback honesto para identificar satisfacción</p>
+                    <small>Métrica: NPS, Reactivation Rate</small>
+                    <small style="display: block; margin-top: 10px;">Herramientas: Formulario NPS + Email automático</small>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Sección de Metodología -->
+    <!-- Sección A/B Test -->
     <section class="metodologia-section">
         <div class="container">
-            <h2>Metodología Aplicada</h2>
-            <div class="metodologia-grid">
-                <div class="metodo-item">
-                    <span class="metodo-icon">📊</span>
-                    <h4>Discovery & Analysis</h4>
-                    <p>Análisis profundo del estado actual y mapping del customer journey existente</p>
+            <h2>A/B Test: Por qué ganó la Variante B</h2>
+            <p style="text-align: center; margin-bottom: 50px; color: #666; font-size: 16px;">Decisión basada en datos: Reducción de no-show vs VAPS rate</p>
+
+            <div class="ab-test-container">
+                <div class="ab-variant">
+                    <h3 style="color: #cc0000; margin-bottom: 20px;">Variante A</h3>
+                    <div class="variant-content">
+                        <p><strong>Estrategia:</strong> 1 email 24h antes</p>
+                        <p style="color: #999; font-style: italic;">Mensaje: "Te esperamos mañana."</p>
+
+                        <div class="metric-item">
+                            <span class="metric-label">No-show Rate:</span>
+                            <span class="metric-value" style="color: #cc0000;">18%</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-label">VAPS Rate:</span>
+                            <span class="metric-value" style="color: #ff9800;">16%</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="metodo-item">
-                    <span class="metodo-icon">🎯</span>
-                    <h4>Strategy Design</h4>
-                    <p>Diseño de la estrategia de customer journey y definición de KPIs</p>
+
+                <div class="vs-separator">vs</div>
+
+                <div class="ab-variant winner">
+                    <h3 style="color: #4caf50; margin-bottom: 20px;">✓ Variante B <span style="font-size: 14px; color: #ffd700;">(GANADORA)</span></h3>
+                    <div class="variant-content">
+                        <p><strong>Estrategia:</strong> 2 emails (48h + 24h)</p>
+                        <p style="color: #999; font-style: italic;">Mensaje: "Confirma tu asistencia."</p>
+
+                        <div class="metric-item">
+                            <span class="metric-label">No-show Rate:</span>
+                            <span class="metric-value" style="color: #4caf50;">6%</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-label">VAPS Rate:</span>
+                            <span class="metric-value" style="color: #ff9800;">8%</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="metodo-item">
-                    <span class="metodo-icon">⚙️</span>
-                    <h4>Implementation</h4>
-                    <p>Configuración de HubSpot, integraciones y automation workflows</p>
-                </div>
-                <div class="metodo-item">
-                    <span class="metodo-icon">📈</span>
-                    <h4>Optimization</h4>
-                    <p>Testing A/B, análisis de datos y mejora continua</p>
-                </div>
+            </div>
+
+            <div style="background: #f0f0f0; padding: 30px; border-radius: 12px; margin-top: 40px;">
+                <h4 style="color: var(--primary-color); margin-bottom: 15px;">Análisis de la decisión:</h4>
+                <p style="margin-bottom: 15px;">Se eligió <strong>Variante B</strong> porque el no-show es el problema mayor. Perder un cliente que no aparece cuesta más que una venta cruzada complementaria.</p>
+                <p><strong>Ejemplo:</strong> Cambio de luna = 300€ vs Escobillas = 30€</p>
+                <p style="margin-top: 15px; font-size: 14px; color: #666;"><em>Estrategia adicional: Usar B para confirmación (reduce no-show). Usar A después de confirmar cita para aumentar VAPS.</em></p>
             </div>
         </div>
     </section>
 
-    <!-- Sección de Competencias -->
+    <!-- Sección Calidad de Datos y Colaboración -->
     <section class="competencias-section">
         <div class="container">
-            <h2>Competencias Demostradas</h2>
-            <div class="skills-grid">
-                <div class="skill-item">
-                    <h4>HubSpot CRM</h4>
-                    <div class="skill-bar">
-                        <div class="skill-fill" style="width: 95%"></div>
-                    </div>
+            <h2>Aspectos Operacionales Clave</h2>
+
+            <div class="operacionales-grid">
+                <div class="operacional-card">
+                    <h3 style="color: var(--primary-color); margin-bottom: 20px;"><i class="fas fa-database"></i> Calidad del Dato</h3>
+                    <ul style="list-style: none;">
+                        <li style="padding: 10px 0; padding-left: 25px; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--primary-color);">→</span>
+                            Eliminar duplicados (matrícula como ID único)
+                        </li>
+                        <li style="padding: 10px 0; padding-left: 25px; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--primary-color);">→</span>
+                            Checkboxes de consentimiento bien configurados (GDPR)
+                        </li>
+                        <li style="padding: 10px 0; padding-left: 25px; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--primary-color);">→</span>
+                            Segmentación de clientes sin consentimiento
+                        </li>
+                        <li style="padding: 10px 0; padding-left: 25px; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--primary-color);">→</span>
+                            Auditar "marketing user" (evitar sobrecostos)
+                        </li>
+                    </ul>
                 </div>
-                <div class="skill-item">
-                    <h4>Marketing Automation</h4>
-                    <div class="skill-bar">
-                        <div class="skill-fill" style="width: 90%"></div>
-                    </div>
+
+                <div class="operacional-card">
+                    <h3 style="color: var(--primary-color); margin-bottom: 20px;"><i class="fas fa-users-cog"></i> Colaboración con Equipos</h3>
+                    <p style="margin-bottom: 15px; color: #666; font-size: 14px;">El CRM necesita estar lleno de datos que importen. Sin ellos, no hay nada que hacer.</p>
+                    <ul style="list-style: none;">
+                        <li style="padding: 10px 0; padding-left: 25px; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--primary-color);">→</span>
+                            IT: Dueño de datos y sistemas
+                        </li>
+                        <li style="padding: 10px 0; padding-left: 25px; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--primary-color);">→</span>
+                            Creativo: Para mailing y contenido
+                        </li>
+                        <li style="padding: 10px 0; padding-left: 25px; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--primary-color);">→</span>
+                            Reservas: Generación de leads
+                        </li>
+                        <li style="padding: 10px 0; padding-left: 25px; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--primary-color);">→</span>
+                            Taller: Información de servicios vendidos
+                        </li>
+                    </ul>
                 </div>
-                <div class="skill-item">
-                    <h4>Customer Journey Mapping</h4>
-                    <div class="skill-bar">
-                        <div class="skill-fill" style="width: 92%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <h4>Data Analytics</h4>
-                    <div class="skill-bar">
-                        <div class="skill-fill" style="width: 88%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <h4>Lead Scoring & Nurturing</h4>
-                    <div class="skill-bar">
-                        <div class="skill-fill" style="width: 91%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <h4>Workflow Optimization</h4>
-                    <div class="skill-bar">
-                        <div class="skill-fill" style="width: 89%"></div>
-                    </div>
+
+                <div class="operacional-card">
+                    <h3 style="color: var(--primary-color); margin-bottom: 20px;"><i class="fas fa-cog"></i> Workflows Automáticos</h3>
+                    <ul style="list-style: none;">
+                        <li style="padding: 10px 0; padding-left: 25px; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--primary-color);">→</span>
+                            Anti-abandono (Chatbot WhatsApp)
+                        </li>
+                        <li style="padding: 10px 0; padding-left: 25px; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--primary-color);">→</span>
+                            Pre-service journey (48h, 24h, 6h)
+                        </li>
+                        <li style="padding: 10px 0; padding-left: 25px; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--primary-color);">→</span>
+                            Post-service feedback y NPS
+                        </li>
+                        <li style="padding: 10px 0; padding-left: 25px; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--primary-color);">→</span>
+                            Comunicaciones según estaciones/clima
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

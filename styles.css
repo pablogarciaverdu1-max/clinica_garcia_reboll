@@ -751,6 +751,336 @@ body {
 }
 
 /* ========================================
+   LIFECYCLE ITEMS
+   ======================================== */
+
+.lifecycle-item {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+    border-left: 4px solid var(--primary-color);
+    position: relative;
+}
+
+.lifecycle-item:hover {
+    box-shadow: 0 10px 30px rgba(0, 61, 122, 0.15);
+    transform: translateY(-5px);
+}
+
+.lifecycle-number {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 20px;
+    margin: 0 auto 15px;
+}
+
+.lifecycle-item h4 {
+    color: var(--primary-color);
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.lifecycle-item p {
+    color: #666;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* ========================================
+   IA TOOLS GRID
+   ======================================== */
+
+.ia-tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.ia-tool-card {
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--text-color);
+    padding: 40px 30px;
+    border-radius: 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+}
+
+.ia-tool-card:hover {
+    transform: translateY(-8px);
+    background: white;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    border-color: var(--accent-color);
+}
+
+.tool-number {
+    width: 50px;
+    height: 50px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 800;
+    margin: 0 auto 15px;
+}
+
+.ia-tool-card h3 {
+    color: var(--primary-color);
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.ia-tool-card p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.tool-icon {
+    font-size: 48px;
+    color: var(--accent-color);
+    margin-top: 20px;
+    opacity: 0.7;
+}
+
+.ia-details {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    margin-top: 40px;
+    display: none;
+    animation: slideDown 0.3s ease;
+    color: var(--text-color);
+}
+
+.ia-details.active {
+    display: block;
+}
+
+.ia-details h3 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.ia-details h4 {
+    color: var(--primary-color);
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.ia-details ul {
+    list-style: none;
+}
+
+.ia-details li {
+    padding: 8px 0;
+    padding-left: 25px;
+    position: relative;
+    color: #666;
+    font-size: 14px;
+}
+
+.ia-details li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--success-color);
+    font-weight: bold;
+}
+
+/* ========================================
+   AUTOMATION DETAILS
+   ======================================== */
+
+.automation-clickable {
+    cursor: pointer;
+}
+
+.automation-details {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    margin-top: 40px;
+    display: none;
+    animation: slideDown 0.3s ease;
+}
+
+.automation-details.active {
+    display: block;
+}
+
+.automation-details h3 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.automation-details h4 {
+    color: var(--primary-color);
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.automation-details ul {
+    list-style: none;
+}
+
+.automation-details li {
+    padding: 8px 0;
+    padding-left: 25px;
+    position: relative;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.automation-details li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* ========================================
+   A/B TEST
+   ======================================== */
+
+.ab-test-container {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 30px;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.ab-variant {
+    background: var(--background-color);
+    padding: 30px;
+    border-radius: 12px;
+    border: 2px solid transparent;
+    transition: var(--transition);
+}
+
+.ab-variant.winner {
+    background: #e8f5e9;
+    border-color: #4caf50;
+    box-shadow: 0 5px 20px rgba(76, 175, 80, 0.15);
+}
+
+.ab-variant h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.variant-content {
+    text-align: left;
+}
+
+.variant-content p {
+    margin: 12px 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.metric-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.metric-label {
+    font-weight: 600;
+    color: #333;
+}
+
+.metric-value {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.vs-separator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary-color);
+    width: 60px;
+    height: 60px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ========================================
+   OPERACIONAL CARDS
+   ======================================== */
+
+.operacionales-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.operacional-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+    border-top: 4px solid var(--primary-color);
+}
+
+.operacional-card:hover {
+    box-shadow: 0 10px 30px rgba(0, 61, 122, 0.15);
+    transform: translateY(-5px);
+}
+
+.operacional-card h3 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.operacional-card h3 i {
+    font-size: 24px;
+}
+
+.operacional-card ul {
+    list-style: none;
+}
+
+.operacional-card li {
+    padding: 8px 0;
+    padding-left: 25px;
+    position: relative;
+    color: #666;
+    font-size: 13px;
+}
+
+/* ========================================
    RESPONSIVE DESIGN
    ======================================== */
 
